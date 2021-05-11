@@ -1,1 +1,123 @@
-<p>home works!</p>
+<div class="home">
+  <!-- About -->
+  <div class="about">
+    <h1 class="mb-4">Portal Phase I</h1>
+
+    <div class="company mb-5">
+      <h2><u>About Kaar</u></h2>
+      <span
+        >Kaar Tech is a global consulting firm founded in 2006 and Mr. Maran
+        Nagaraj is the current CEO. Kaar Tech designs and develops SAP services
+        to solve various real-time challenges.
+      </span>
+    </div>
+
+    <div class="me mb-5">
+      <h2><u>About Me</u></h2>
+      <span
+        >Hello there👋, I am <b> Suryarajan S</b>. I am a full-stack web
+        developer with over 1 year experience in React and NodeJS. From my
+        college, I have greatly enhanced my programming skills by solving
+        various problems and competing in competitions.
+      </span>
+    </div>
+
+    <div class="status mb-5">
+      <h2><u>Current Status</u></h2>
+      <span>[TODO] Write about Customer Portal</span>
+    </div>
+
+    <div class="portals mb-5">
+      <h2><u>About Portals</u></h2>
+      <span>For the portal assignment, 7 portals are to be developed.</span>
+      <div class="mx-5 mt-2 portals-list">
+        <h4>Portals:</h4>
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <mat-icon class="pending-icon">pending</mat-icon>
+            <!-- <mat-icon class="completed-icon">check_circle</mat-icon> -->
+            Customer Portal</mat-list-item
+          >
+          <mat-list-item role="listitem"
+            ><mat-icon class="pending-icon">pending</mat-icon>Vendor
+            Portal</mat-list-item
+          >
+          <mat-list-item role="listitem"
+            ><mat-icon class="pending-icon">pending</mat-icon>Employee
+            Portal</mat-list-item
+          >
+          <mat-list-item role="listitem"
+            ><mat-icon class="pending-icon">pending</mat-icon>Maintenance
+            Portal</mat-list-item
+          >
+          <mat-list-item role="listitem"
+            ><mat-icon class="pending-icon">pending</mat-icon>Production
+            Portal</mat-list-item
+          >
+          <mat-list-item role="listitem"
+            ><mat-icon class="pending-icon">pending</mat-icon>EHSM
+            Portal</mat-list-item
+          >
+          <mat-list-item role="listitem"
+            ><mat-icon class="pending-icon">pending</mat-icon>Quality
+            Portal</mat-list-item
+          >
+        </mat-list>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        noopener
+        class="ui-link"
+        href="https://github.com/theWellHopeErr/portal-phase-i-server"
+        >Frontend Gitub Repo</a
+      >
+      <a
+        target="_blank"
+        rel="noreferrer"
+        noopener
+        class="server-link"
+        href="https://github.com/theWellHopeErr/portal-phase-i-ui"
+        >Backend Gitub Repo</a
+      >
+    </div>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <!-- Portal Menu -->
+  <div class="portal-menu">
+    <mat-list-item role="listitem">
+      <mat-card class="customer mb-5" (click)="navigate('customer')">
+        <mat-card-title>
+          <mat-icon>face</mat-icon>
+          Customer Portal</mat-card-title
+        >
+        <mat-card-subtitle>A portal for Customers</mat-card-subtitle>
+      </mat-card>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+      <mat-card class="vendor mb-5" (click)="navigate('vendor')">
+        <mat-card-title>
+          <mat-icon>shopping_cart</mat-icon>
+          Vendor Portal</mat-card-title
+        >
+        <mat-card-subtitle>A portal for Vendors</mat-card-subtitle>
+      </mat-card>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+      <mat-card class="employee" (click)="navigate('employee')">
+        <mat-card-title>
+          <mat-icon>groups</mat-icon>
+          Employee Portal</mat-card-title
+        >
+        <mat-card-subtitle>A portal for Employees</mat-card-subtitle>
+      </mat-card>
+    </mat-list-item>
+  </div>
+</div>

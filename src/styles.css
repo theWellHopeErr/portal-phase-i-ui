@@ -1,12 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
   /* font-family: "Balsamiq Sans", cursive;
   font-family: "Roboto", sans-serif; */
+}
+
+body::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px #5682ff;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 5%;
+  background-color: #5682ff;
+  outline: 1px solid #5682ff;
 }
