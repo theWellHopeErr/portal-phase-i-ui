@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomerPortalComponent } from './customer-portal/customer-portal.component';
-import { EmployeePortalComponent } from './employee-portal/employee-portal.component';
+
 import { HomeComponent } from './home/home.component';
-import { VendorPortalComponent } from './vendor-portal/vendor-portal.component';
+import { CustomerPortalLandingComponent } from './customer-portal/landing/landing.component';
+import { VendorPortalLandingComponent } from './vendor-portal/landing/landing.component';
+import { EmployeePortalLandingComponent } from './employee-portal/landing/landing.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'customer', component: CustomerPortalComponent },
-  { path: 'vendor', component: VendorPortalComponent },
-  { path: 'employee', component: EmployeePortalComponent },
+  { path: 'customer', component: CustomerPortalLandingComponent },
+  { path: 'vendor', component: VendorPortalLandingComponent },
+  { path: 'employee', component: EmployeePortalLandingComponent },
 ];
 
 @NgModule({
