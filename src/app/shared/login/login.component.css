@@ -1,0 +1,13 @@
+mat-card {
+  width: 25em;
+  text-align: center;
+  margin: auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.submit {
+  background: #5682ff;
+}

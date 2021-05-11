@@ -11,6 +11,27 @@ const routes: Routes = [
   { path: 'customer', component: CustomerPortalLandingComponent },
   { path: 'vendor', component: VendorPortalLandingComponent },
   { path: 'employee', component: EmployeePortalLandingComponent },
+  // {
+  //   path: 'customer',
+  //   loadChildren: () =>
+  //     import('./customer-portal/customer-portal.module').then(
+  //       (m) => m.CustomerPortalModule
+  //     ),
+  // },
+  // {
+  //   path: 'vendor',
+  //   loadChildren: () =>
+  //     import('./vendor-portal/vendor-portal.module').then(
+  //       (m) => m.VendorPortalModule
+  //     ),
+  // },
+  // {
+  //   path: 'employee',
+  //   loadChildren: () =>
+  //     import('./employee-portal/employee-portal.module').then(
+  //       (m) => m.EmployeePortalModule
+  //     ),
+  // },
 ];
 
 @NgModule({
