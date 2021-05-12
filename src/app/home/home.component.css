@@ -6,12 +6,24 @@
 h1 {
   font-weight: 900;
 }
+.portal-title {
+  margin-bottom: 1.5em;
+}
 
 .about {
   width: 50%;
   height: 100vh;
   padding: 3em;
   overflow: auto;
+}
+
+mat-panel-title {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+mat-list-item {
+  font-size: 0.8em;
 }
 
 .portals-list {

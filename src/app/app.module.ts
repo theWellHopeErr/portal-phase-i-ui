@@ -7,7 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatTreeModule } from '@angular/material/tree';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +32,7 @@ import { SharedModule } from './shared/shared.module';
     MatListModule,
     MatCardModule,
     MatIconModule,
-    MatTreeModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

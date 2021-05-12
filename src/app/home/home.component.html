@@ -1,89 +1,76 @@
 <div class="home">
   <!-- About -->
   <div class="about">
-    <h1 class="mb-4">Portal Phase I</h1>
+    <h1 class="portal-title">Portal Phase I</h1>
 
-    <div class="company mb-5">
-      <h2><u>About Kaar</u></h2>
-      <span
-        >Kaar Tech is a global consulting firm founded in 2006 and Mr. Maran
-        Nagaraj is the current CEO. Kaar Tech designs and develops SAP services
-        to solve various real-time challenges.
-      </span>
-    </div>
+    <mat-accordion multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> About Kaar </mat-panel-title>
+        </mat-expansion-panel-header>
+        Kaar Tech is a global consulting firm co-founded in 2006 by Mr. Maran
+        Nagaraj, the current CEO. Kaar Tech designs and develops SAP services
+        to solve various real-time challenges.
+      </mat-expansion-panel>
 
-    <div class="me mb-5">
-      <h2><u>About Me</u></h2>
-      <span
-        >Hello there👋, I am <b> Suryarajan S</b>. I am a full-stack web
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> About Me </mat-panel-title>
+        </mat-expansion-panel-header>
+        Hello there👋, I am <b> Suryarajan S</b>. I am a full-stack web
         developer with over 1 year experience in React and NodeJS. From my
         college, I have greatly enhanced my programming skills by solving
         various problems and competing in competitions.
-      </span>
-    </div>
+      </mat-expansion-panel>
 
-    <div class="status mb-5">
-      <h2><u>Current Status</u></h2>
-      <span>[TODO] Write about Customer Portal</span>
-    </div>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Current Status </mat-panel-title>
+        </mat-expansion-panel-header>
+        [TODO] Write about Customer Portal
+      </mat-expansion-panel>
 
-    <div class="portals mb-5">
-      <h2><u>About Portals</u></h2>
-      <span>For the portal assignment, 7 portals are to be developed.</span>
-      <div class="mx-5 mt-2 portals-list">
-        <h4>Portals:</h4>
-        <mat-list role="list">
-          <mat-list-item role="listitem">
-            <mat-icon class="pending-icon">pending</mat-icon>
-            <!-- <mat-icon class="completed-icon">check_circle</mat-icon> -->
-            Customer Portal</mat-list-item
-          >
-          <mat-list-item role="listitem"
-            ><mat-icon class="pending-icon">pending</mat-icon>Vendor
-            Portal</mat-list-item
-          >
-          <mat-list-item role="listitem"
-            ><mat-icon class="pending-icon">pending</mat-icon>Employee
-            Portal</mat-list-item
-          >
-          <mat-list-item role="listitem"
-            ><mat-icon class="pending-icon">pending</mat-icon>Maintenance
-            Portal</mat-list-item
-          >
-          <mat-list-item role="listitem"
-            ><mat-icon class="pending-icon">pending</mat-icon>Production
-            Portal</mat-list-item
-          >
-          <mat-list-item role="listitem"
-            ><mat-icon class="pending-icon">pending</mat-icon>EHSM
-            Portal</mat-list-item
-          >
-          <mat-list-item role="listitem"
-            ><mat-icon class="pending-icon">pending</mat-icon>Quality
-            Portal</mat-list-item
-          >
-        </mat-list>
-      </div>
-    </div>
-
-    <div class="footer">
-      <a
-        target="_blank"
-        rel="noreferrer"
-        noopener
-        class="ui-link"
-        href="https://github.com/theWellHopeErr/portal-phase-i-server"
-        >Frontend Gitub Repo</a
-      >
-      <a
-        target="_blank"
-        rel="noreferrer"
-        noopener
-        class="server-link"
-        href="https://github.com/theWellHopeErr/portal-phase-i-ui"
-        >Backend Gitub Repo</a
-      >
-    </div>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> About Portals </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span>For the portal assignment, 7 portals are to be developed.</span>
+        <div class="mx-5 mt-2 portals-list">
+          <h5>Portals:</h5>
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <mat-icon class="pending-icon">pending</mat-icon>
+              <!-- <mat-icon class="completed-icon">check_circle</mat-icon> -->
+              Customer Portal</mat-list-item
+            >
+            <mat-list-item role="listitem"
+              ><mat-icon class="pending-icon">pending</mat-icon>Vendor
+              Portal</mat-list-item
+            >
+            <mat-list-item role="listitem"
+              ><mat-icon class="pending-icon">pending</mat-icon>Employee
+              Portal</mat-list-item
+            >
+            <mat-list-item role="listitem"
+              ><mat-icon class="pending-icon">pending</mat-icon>Maintenance
+              Portal</mat-list-item
+            >
+            <mat-list-item role="listitem"
+              ><mat-icon class="pending-icon">pending</mat-icon>Production
+              Portal</mat-list-item
+            >
+            <mat-list-item role="listitem"
+              ><mat-icon class="pending-icon">pending</mat-icon>EHSM
+              Portal</mat-list-item
+            >
+            <mat-list-item role="listitem"
+              ><mat-icon class="pending-icon">pending</mat-icon>Quality
+              Portal</mat-list-item
+            >
+          </mat-list>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 
   <mat-divider [vertical]="true"></mat-divider>
