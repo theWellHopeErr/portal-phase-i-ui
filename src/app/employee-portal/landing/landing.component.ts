@@ -13,7 +13,6 @@ export class EmployeePortalLandingComponent implements OnInit {
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
-      console.log(`/${currentUser.data.role}/dashboard`);
       this.router.navigate([`/${currentUser.data.role}/dashboard`]);
     }
   }
