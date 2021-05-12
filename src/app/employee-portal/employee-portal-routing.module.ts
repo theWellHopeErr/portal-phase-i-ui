@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AuthComponent } from './auth/auth.component';
-import { EmployeePortalLandingComponent } from './landing/landing.component';
+import { AuthGuard } from '../shared/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: 'employee',
+    canActivateChild: [AuthGuard],
     children: [
-      { path: '', component: EmployeePortalLandingComponent },
-      { path: 'login', component: AuthComponent },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
     ],
   },
 ];
