@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-landing',
@@ -6,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.css'],
 })
 export class CustomerPortalLandingComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const currentUser = this.authService.currentUserValue;
+    if (currentUser) {
+      console.log(`/${currentUser.data.role}/dashboard`);
+      this.router.navigate([`/${currentUser.data.role}/dashboard`]);
+    }
+  }
 }
