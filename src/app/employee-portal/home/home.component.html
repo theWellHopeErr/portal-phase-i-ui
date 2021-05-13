@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>
+      <mat-icon class="account-icon m-auto">account_circle</mat-icon>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Inquiry Data</a>
+      <a mat-list-item href="#">Sales Order Data</a>
+      <a mat-list-item href="#">List of Delivery</a>
+      <mat-expansion-panel
+        class="nav-expansion-panel"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        hideToggle
+      >
+        <mat-expansion-panel-header class="nav-expansion-panel-header">
+          <mat-panel-title class="nav-expansion-panel-title">
+            Financial Sheet
+          </mat-panel-title>
+          <mat-icon *ngIf="panelOpenState" class="nav-expansion-panel-icon"
+            >arrow_drop_up</mat-icon
+          >
+          <mat-icon *ngIf="!panelOpenState" class="nav-expansion-panel-icon"
+            >arrow_drop_down</mat-icon
+          >
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item href="#">Invoice Details</a>
+          <a mat-list-item href="#">Payments and Aging</a>
+          <a mat-list-item href="#">Credit/Demo Memo</a>
+          <a mat-list-item href="#">Overall Sales Data</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-nav-list>
+    <mat-nav-list class="logout-nav-list">
+      <a mat-list-item (click)="logout()"
+        ><mat-icon class="mr-1">logout</mat-icon>Logout</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-icon class="mr-1">groups</mat-icon>
+      <span class="ml-1">Employee Portal</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
