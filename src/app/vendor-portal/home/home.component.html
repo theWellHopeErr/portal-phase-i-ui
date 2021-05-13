@@ -9,9 +9,9 @@
   >
     <mat-toolbar>
       <mat-icon
-        class="account-icon"
-        matTooltip="{{ username }}"
-        matTooltipPosition="right"
+        class="account-icon m-auto"
+        routerLink="/vendor/profile"
+        routerLinkActive="router-link-active"
         >account_circle</mat-icon
       >
     </mat-toolbar>
@@ -61,7 +61,8 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Vendor Portal</span>
+      <mat-icon class="mr-1">shopping_cart</mat-icon>
+      <span class="ml-1">Vendor Portal</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

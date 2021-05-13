@@ -17,9 +17,10 @@ import { SharedModule } from '../shared/shared.module';
 import { EmployeePortalRoutingModule } from './employee-portal-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [EmployeePortalLandingComponent, DashboardComponent, HomeComponent],
+  declarations: [EmployeePortalLandingComponent, DashboardComponent, HomeComponent, ProfileComponent],
   imports: [
     CommonModule,
     SharedModule,

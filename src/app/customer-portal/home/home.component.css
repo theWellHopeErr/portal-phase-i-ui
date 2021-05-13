@@ -22,6 +22,7 @@
 
 .account-icon {
   font-size: 2em;
+  cursor: pointer;
 }
 
 .logout-nav-list {

@@ -8,7 +8,12 @@
     [opened]="(isHandset$ | async) === false"
   >
     <mat-toolbar>
-      <mat-icon class="account-icon m-auto">account_circle</mat-icon>
+      <mat-icon
+        class="account-icon m-auto"
+        routerLink="/employee/profile"
+        routerLinkActive="router-link-active"
+        >account_circle</mat-icon
+      >
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Inquiry Data</a>

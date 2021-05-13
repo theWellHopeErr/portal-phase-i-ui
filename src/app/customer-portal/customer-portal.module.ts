@@ -18,12 +18,14 @@ import { SharedModule } from '../shared/shared.module';
 import { CustomerPortalRoutingModule } from './customer-portal-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     CustomerPortalLandingComponent,
     DashboardComponent,
     HomeComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
