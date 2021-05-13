@@ -32,8 +32,18 @@
         <div *ngIf="f.password.errors.required">Password is required</div>
       </div>
 
-      <button mat-raised-button color="primary" class="submit" type="submit">
-        Submit
+      <button
+        [disabled]="loading"
+        mat-raised-button
+        color="primary"
+        class="submit"
+        type="submit"
+      >
+        <span
+          *ngIf="loading"
+          class="spinner-border spinner-border-sm mr-1"
+        ></span>
+        Login
       </button>
     </form>
   </mat-card-content>

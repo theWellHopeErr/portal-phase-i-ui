@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/shared/auth.service';
@@ -9,12 +10,17 @@ import { AuthService } from 'src/app/shared/auth.service';
   styleUrls: ['./landing.component.css'],
 })
 export class CustomerPortalLandingComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Customer Portal');
+  }
 
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
-      console.log(`/${currentUser.data.role}/dashboard`);
       this.router.navigate([`/${currentUser.data.role}/dashboard`]);
     }
   }

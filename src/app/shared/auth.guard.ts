@@ -27,7 +27,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     if (currentUser) {
       return true;
     }
-    console.log('auth.guard 1');
     this.router.navigate(['/']);
     return false;
   }
@@ -44,7 +43,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     if (currentUser && state.url.includes(currentUser.data.role)) {
       return true;
     }
-    console.log('auth.guard 2');
     this.router.navigate(['/']);
     return false;
   }

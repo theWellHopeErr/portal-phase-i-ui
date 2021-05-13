@@ -18,7 +18,6 @@ export class AuthService {
       JSON.parse(localStorage.getItem('token'))
     );
     this.currentUser = this.currentUserSubject.asObservable();
-    console.log('authservice:', this.currentUserSubject.value);
     return this.currentUserSubject.value;
   }
 

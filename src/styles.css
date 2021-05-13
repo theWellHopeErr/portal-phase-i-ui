@@ -15,15 +15,15 @@ body {
   font-family: "Roboto", sans-serif; */
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 0.2em;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   box-shadow: 0 0 6px #5682ff;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 5%;
   background-color: #5682ff;
   outline: 1px solid #5682ff;
