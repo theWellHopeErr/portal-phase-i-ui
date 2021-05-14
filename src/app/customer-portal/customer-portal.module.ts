@@ -12,6 +12,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { CustomerPortalLandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
@@ -42,6 +45,9 @@ import { ProfileComponent } from './profile/profile.component';
     MatListModule,
     MatTooltipModule,
     MatExpansionModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   exports: [CustomerPortalLandingComponent],
 })

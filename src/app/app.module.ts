@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -16,6 +16,7 @@ import { CustomerPortalModule } from './customer-portal/customer-portal.module';
 import { VendorPortalModule } from './vendor-portal/vendor-portal.module';
 import { EmployeePortalModule } from './employee-portal/employee-portal.module';
 import { SharedModule } from './shared/shared.module';
+import { AuthInterceptor } from './shared/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -34,7 +35,13 @@ import { SharedModule } from './shared/shared.module';
     MatIconModule,
     MatExpansionModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

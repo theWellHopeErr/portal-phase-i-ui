@@ -25,6 +25,7 @@
           matInput
           type="password"
           formControlName="password"
+          color="primary"
           [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
         />
       </mat-form-field>
@@ -35,6 +36,7 @@
       <button
         [disabled]="loading"
         mat-raised-button
+        [ngStyle]="{ background: color }"
         color="primary"
         class="submit"
         type="submit"
