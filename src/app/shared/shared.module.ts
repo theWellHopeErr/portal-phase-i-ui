@@ -9,10 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { LoginComponent } from './login/login.component';
-import { SnackComponent } from './snack/snack.component';
 
 @NgModule({
-  declarations: [LoginComponent, SnackComponent],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
