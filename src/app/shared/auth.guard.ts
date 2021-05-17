@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     | boolean
     | UrlTree {
     const currentUser = this.authService.currentUserValue;
-    if (currentUser && state.url.includes(currentUser.data.role)) {
+    if (currentUser && state.url.includes(currentUser.role)) {
       return true;
     }
     this.router.navigate(['/']);

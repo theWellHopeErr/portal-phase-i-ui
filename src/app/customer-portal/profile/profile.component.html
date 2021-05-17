@@ -12,8 +12,14 @@
     </button>
   </mat-card-title>
   <mat-card-content>
+    <div class="img-wrapper">
+      <img
+        mat-card-image
+        src="https://www.materialui.co/materialIcons/action/account_circle_black_108x108.png"
+      />
+    </div>
     <form [formGroup]="profileForm">
-      <mat-grid-list cols="1" rowHeight="5em">
+      <mat-grid-list cols="3" class="grid-list-3" rowHeight="5em">
         <mat-grid-tile>
           <mat-label>Customer ID:</mat-label>
           <mat-form-field appearance="legacy">
@@ -26,22 +32,6 @@
             />
           </mat-form-field>
         </mat-grid-tile>
-      </mat-grid-list>
-
-      <mat-grid-list cols="3" class="grid-list-3" rowHeight="5em">
-        <mat-grid-tile>
-          <mat-label>Title:</mat-label>
-          <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
-            <input
-              matInput
-              type="text"
-              formControlName="title"
-              color="primary"
-              [readonly]="!isEditEnabled"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-
         <mat-grid-tile>
           <mat-label>Name 1:</mat-label>
           <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
@@ -69,18 +59,6 @@
 
       <mat-grid-list cols="3" class="grid-list-3" rowHeight="5em">
         <mat-grid-tile>
-          <mat-label>Address:</mat-label>
-          <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
-            <input
-              matInput
-              type="text"
-              formControlName="address"
-              color="primary"
-              [readonly]="!isEditEnabled"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile>
           <mat-label>Street:</mat-label>
           <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
             <input
@@ -104,9 +82,33 @@
             />
           </mat-form-field>
         </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-label>District:</mat-label>
+          <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
+            <input
+              matInput
+              type="text"
+              formControlName="district"
+              color="primary"
+              [readonly]="!isEditEnabled"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
       </mat-grid-list>
 
       <mat-grid-list cols="3" class="grid-list-3" rowHeight="5em">
+        <mat-grid-tile>
+          <mat-label>Region:</mat-label>
+          <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
+            <input
+              matInput
+              type="text"
+              formControlName="region"
+              color="primary"
+              [readonly]="!isEditEnabled"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
         <mat-grid-tile>
           <mat-label>Postal Code:</mat-label>
           <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
@@ -114,18 +116,6 @@
               matInput
               type="text"
               formControlName="pcode"
-              color="primary"
-              [readonly]="!isEditEnabled"
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-label>State:</mat-label>
-          <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
-            <input
-              matInput
-              type="text"
-              formControlName="state"
               color="primary"
               [readonly]="!isEditEnabled"
             />
@@ -145,7 +135,7 @@
         </mat-grid-tile>
       </mat-grid-list>
 
-      <mat-grid-list cols="2" rowHeight="5em">
+      <mat-grid-list cols="1" rowHeight="5em">
         <mat-grid-tile>
           <mat-label>Telephone:</mat-label>
           <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
@@ -153,17 +143,6 @@
               matInput
               type="text"
               formControlName="tel"
-              color="primary"
-              [readonly]="!isEditEnabled"
-            />
-          </mat-form-field> </mat-grid-tile
-        ><mat-grid-tile>
-          <mat-label>Fax Number:</mat-label>
-          <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
-            <input
-              matInput
-              type="text"
-              formControlName="fax"
               color="primary"
               [readonly]="!isEditEnabled"
             />

@@ -1,8 +1,6 @@
 export interface User {
-  data: {
-    username: string;
-    password: string;
-    role: string;
-    accessToken?: string;
-  };
+  username: string;
+  password: string;
+  role: string;
+  accessToken?: string;
 }

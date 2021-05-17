@@ -16,12 +16,12 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     // Get the auth token from the service.
     const currentUser = this.authService.currentUserValue;
-    if (currentUser && currentUser.data.accessToken) {
+    if (currentUser && currentUser.accessToken) {
       req = req.clone({
         setHeaders: {
           'Content-Type': 'application/json',
           Accept: 'application / json',
-          Authorization: `Bearer ${currentUser.data.accessToken}`,
+          Authorization: `Bearer ${currentUser.accessToken}`,
         },
       });
     }

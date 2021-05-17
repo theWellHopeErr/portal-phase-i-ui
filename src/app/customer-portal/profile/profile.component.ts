@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { ProfileService } from '../services/profile.service';
@@ -15,43 +14,26 @@ export class ProfileComponent implements OnInit {
   isEditEnabled = false;
   loading = false;
   form: Profile = {
-    cid: 'string',
-    name1: 'string',
-    name2: 'string',
-    title: 'string',
-    address: 'string',
-    street: 'string',
-    city: 'string',
-    pcode: 'string',
-    state: 'string',
-    country: 'string',
-    tel: 'string',
-    fax: 'string',
+    cid: '',
+    name1: '',
+    name2: '',
+    city: '',
+    region: '',
+    district: '',
+    street: '',
+    pcode: '',
+    country: '',
+    tel: '',
   };
 
   constructor(
     private formBuilder: FormBuilder,
     private profileService: ProfileService
   ) {
-    // this.profileForm = formBuilder.group({
-    //   cid: [this.form['cid']],
-    //   name1: [this.form['name1']],
-    //   name2: [this.form['name2']],
-    //   title: [this.form['title']],
-    //   address: [this.form['address']],
-    //   street: [this.form['street']],
-    //   city: [this.form['city']],
-    //   pcode: [this.form['pcode']],
-    //   state: [this.form['state']],
-    //   country: [this.form['country']],
-    //   tel: [this.form['tel']],
-    //   fax: [this.form['fax']],
-    // });
     this.profileService.get().subscribe((res: Profile) => {
       this.form = res;
-      console.log(this.form);
+      this.profileForm = this.formBuilder.group(this.form);
     });
-    // TODO: Populate FormBuilder with response data
   }
 
   ngOnInit(): void {
@@ -66,10 +48,10 @@ export class ProfileComponent implements OnInit {
     this.loading = true;
 
     this.form = this.profileForm.value;
-    this.profileService
-      .edit(this.profileForm.value)
-      .subscribe((res) => console.log(res));
-    this.isEditEnabled = false;
+    this.profileService.edit(this.profileForm.value).subscribe((res) => {
+      this.isEditEnabled = false;
+      this.loading = false;
+    });
   }
 
   cancel(): void {

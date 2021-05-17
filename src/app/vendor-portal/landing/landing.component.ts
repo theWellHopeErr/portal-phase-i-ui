@@ -20,7 +20,7 @@ export class VendorPortalLandingComponent implements OnInit {
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
-      this.router.navigate([`/${currentUser.data.role}/dashboard`]);
+      this.router.navigate([`/${currentUser.role}/dashboard`]);
     }
   }
 }

@@ -18,6 +18,14 @@ mat-card {
   float: right;
 }
 
+.img-wrapper {
+  text-align: center;
+}
+
+.mat-card-image {
+  width: 10%;
+}
+
 mat-card-content {
   margin-top: 2em;
 }

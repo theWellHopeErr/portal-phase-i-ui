@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService
   ) {
     if (this.authService.currentUserValue) {
-      this.router.navigate([`/${this.authService.currentUserValue.data.role}`]);
+      this.router.navigate([`/${this.authService.currentUserValue.role}`]);
     }
   }
 
