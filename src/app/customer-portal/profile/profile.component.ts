@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { SnackService } from 'src/app/shared/snack.service';
 
 import { ProfileService } from '../services/profile.service';
@@ -31,8 +32,10 @@ export class ProfileComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private profileService: ProfileService,
-    private snackService: SnackService
+    private snackService: SnackService,
+    private titleService: Title
   ) {
+    this.titleService.setTitle('Profile | Customer Portal');
     this.profileService.get().subscribe((res: Profile) => {
       this.form = res;
       this.profileForm = this.formBuilder.group(this.form);

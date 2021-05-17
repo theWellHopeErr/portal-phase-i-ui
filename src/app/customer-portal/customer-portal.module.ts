@@ -22,6 +22,14 @@ import { CustomerPortalRoutingModule } from './customer-portal-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { InquiryComponent } from './inquiry/inquiry.component';
+import { SalesOrderComponent } from './sales-order/sales-order.component';
+import { LodComponent } from './lod/lod.component';
+import { FincancialSheetComponent } from './fincancial-sheet/fincancial-sheet.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { PaymentsAgingComponent } from './payments-aging/payments-aging.component';
+import { CdMemoComponent } from './cd-memo/cd-memo.component';
+import { OverallSalesComponent } from './overall-sales/overall-sales.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +37,14 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardComponent,
     HomeComponent,
     ProfileComponent,
+    InquiryComponent,
+    SalesOrderComponent,
+    LodComponent,
+    FincancialSheetComponent,
+    InvoiceComponent,
+    PaymentsAgingComponent,
+    CdMemoComponent,
+    OverallSalesComponent,
   ],
   imports: [
     CommonModule,

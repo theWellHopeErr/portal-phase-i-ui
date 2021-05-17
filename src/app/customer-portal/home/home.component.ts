@@ -23,12 +23,14 @@ export class HomeComponent implements OnInit {
 
   username: string;
   panelOpenState = false;
+  routerLink = this.router.url.split('/')[2];
 
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
       this.username = currentUser.username;
     }
+    console.log(this.routerLink);
   }
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)

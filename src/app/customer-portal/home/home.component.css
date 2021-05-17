@@ -1,5 +1,5 @@
 .mat-toolbar {
-  background-color: #ff5656;
+  background: #ff5656;
 }
 
 .sidenav-container {
@@ -8,7 +8,7 @@
 
 .sidenav {
   width: 200px;
-  background-color: #ff5656;
+  background: #ff5656;
 }
 
 .sidenav .mat-toolbar {
@@ -55,4 +55,16 @@
 
 .mat-expansion-panel-header {
   padding: 0 15px 16px;
+}
+
+.fi-nav-list {
+  padding-top: 2em;
+}
+
+.active-nav-item {
+  background: #e03939;
+}
+
+nav-item {
+  background: #ff5656;
 }
