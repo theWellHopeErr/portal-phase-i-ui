@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { map, shareReplay } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { AuthService } from '../../shared/auth.service';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -16,26 +14,51 @@ export class DashboardComponent {
     private breakpointObserver: BreakpointObserver,
     private titleService: Title
   ) {
-    this.titleService.setTitle('Customer Portal');
+    this.titleService.setTitle('Dashboard | Customer Portal');
   }
+
+  cardData = {
+    inquiry: {
+      title: 'Inquiry Data',
+      url: '/customer/inquiry',
+      description:
+        'To request a company to  provide quotation and sales information for presales data collection.',
+      icon: 'receipt_long',
+      iconColor: '#ff8d56',
+    },
+    salesOrder: {
+      title: 'Sales Order Data',
+      url: '/customer/sales-order',
+      description:
+        'To display the sale orders recorded between the logon customer and the company.',
+      icon: 'featured_play_list',
+      iconColor: '#ffd356',
+    },
+    lod: {
+      title: 'List of Delivery',
+      url: '/customer/lod',
+      description:
+        'To view the history of deliveries recorded from the company and the logon customer.',
+      icon: 'list_alt',
+      iconColor: '#ff5666',
+    },
+  };
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
         return [
-          // { title: 'Card 1', cols: 1, rows: 1 },
-          // { title: 'Card 2', cols: 1, rows: 1 },
-          // { title: 'Card 3', cols: 1, rows: 1 },
-          // { title: 'Card 4', cols: 1, rows: 1 },
+          { ...this.cardData.inquiry, cols: 1, rows: 1 },
+          { ...this.cardData.salesOrder, cols: 1, rows: 1 },
+          { ...this.cardData.lod, cols: 1, rows: 1 },
         ];
       }
 
       return [
-        // { title: 'Card 1', cols: 2, rows: 1 },
-        // { title: 'Card 2', cols: 1, rows: 1 },
-        // { title: 'Card 3', cols: 1, rows: 2 },
-        // { title: 'Card 4', cols: 1, rows: 1 },
+        { ...this.cardData.inquiry, cols: 2, rows: 1 },
+        { ...this.cardData.salesOrder, cols: 1, rows: 1 },
+        { ...this.cardData.lod, cols: 1, rows: 1 },
       ];
     })
   );
