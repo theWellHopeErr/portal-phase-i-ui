@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
+import { SnackService } from '../snack.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private snackService: SnackService
   ) {
     if (this.authService.currentUserValue) {
       this.router.navigate([`/${this.authService.currentUserValue.role}`]);
@@ -52,6 +54,7 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           this.router.navigate([`/${this.f.role.value}/dashboard`]);
+          this.snackService.openSnackBar(`You're logged in!!`);
         },
         error: (error) => {
           this.error = error.error.message;

@@ -6,11 +6,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { LoginComponent } from './login/login.component';
+import { SnackComponent } from './snack/snack.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, SnackComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -18,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSnackBarModule,
   ],
   exports: [LoginComponent],
 })

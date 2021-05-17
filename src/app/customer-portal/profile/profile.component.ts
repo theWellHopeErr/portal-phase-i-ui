@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SnackService } from 'src/app/shared/snack.service';
 
 import { ProfileService } from '../services/profile.service';
 import { Profile } from './profile';
@@ -12,7 +13,8 @@ import { Profile } from './profile';
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
   isEditEnabled = false;
-  loading = false;
+  saveLoading = false;
+  formLoading = true;
   form: Profile = {
     cid: '',
     name1: '',
@@ -28,11 +30,13 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    private snackService: SnackService
   ) {
     this.profileService.get().subscribe((res: Profile) => {
       this.form = res;
       this.profileForm = this.formBuilder.group(this.form);
+      this.formLoading = false;
     });
   }
 
@@ -45,12 +49,13 @@ export class ProfileComponent implements OnInit {
   }
 
   save(): void {
-    this.loading = true;
+    this.saveLoading = true;
 
     this.form = this.profileForm.value;
     this.profileService.edit(this.profileForm.value).subscribe((res) => {
       this.isEditEnabled = false;
-      this.loading = false;
+      this.saveLoading = false;
+      this.snackService.openSnackBar(`Profile Updated!!`);
     });
   }
 

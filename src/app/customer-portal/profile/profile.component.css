@@ -20,10 +20,17 @@ mat-card {
 
 .img-wrapper {
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .mat-card-image {
   width: 10%;
+}
+
+.loading-gif {
+  width: 25%;
 }
 
 mat-card-content {

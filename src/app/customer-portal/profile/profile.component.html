@@ -17,8 +17,14 @@
         mat-card-image
         src="https://www.materialui.co/materialIcons/action/account_circle_black_108x108.png"
       />
+      <img
+        *ngIf="formLoading"
+        class="loading-gif"
+        src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
+      />
     </div>
-    <form [formGroup]="profileForm">
+
+    <form *ngIf="!formLoading" [formGroup]="profileForm">
       <mat-grid-list cols="3" class="grid-list-3" rowHeight="5em">
         <mat-grid-tile>
           <mat-label>Customer ID:</mat-label>
@@ -156,9 +162,12 @@
       mat-raised-button
       color="primary"
       (click)="save()"
-      [disabled]="loading"
+      [disabled]="saveLoading"
     >
-      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span
+      <span
+        *ngIf="saveLoading"
+        class="spinner-border spinner-border-sm mr-1"
+      ></span
       >Save
     </button>
     <button mat-stroked-button (click)="cancel()">Cancel</button>
