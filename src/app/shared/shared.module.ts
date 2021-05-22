@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  CommonModule,
+  DatePipe,
+  DecimalPipe,
+  UpperCasePipe,
+} from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,9 +19,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { LoginComponent } from './login/login.component';
 import { TableComponent } from './table/table.component';
+import { TablePipe } from './table.pipe';
 
 @NgModule({
-  declarations: [LoginComponent, TableComponent],
+  declarations: [LoginComponent, TableComponent, TablePipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -30,6 +36,7 @@ import { TableComponent } from './table/table.component';
     MatPaginatorModule,
     FlexLayoutModule,
   ],
+  providers: [DecimalPipe, UpperCasePipe, DatePipe],
   exports: [LoginComponent, TableComponent],
 })
 export class SharedModule {}
