@@ -15,6 +15,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FilePondModule, registerPlugin } from 'ngx-filepond';
+import * as FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+registerPlugin(FilePondPluginFileValidateType);
 
 import { CustomerPortalLandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
@@ -30,6 +33,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { PaymentsAgingComponent } from './payments-aging/payments-aging.component';
 import { CdMemoComponent } from './cd-memo/cd-memo.component';
 import { OverallSalesComponent } from './overall-sales/overall-sales.component';
+import { CustomerMasterComponent } from './customer-master/customer-master.component';
+import { InquiryDetailsComponent } from './inquiry-details/inquiry-details.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +50,8 @@ import { OverallSalesComponent } from './overall-sales/overall-sales.component';
     PaymentsAgingComponent,
     CdMemoComponent,
     OverallSalesComponent,
+    CustomerMasterComponent,
+    InquiryDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -64,6 +71,7 @@ import { OverallSalesComponent } from './overall-sales/overall-sales.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    FilePondModule,
   ],
   exports: [CustomerPortalLandingComponent],
 })

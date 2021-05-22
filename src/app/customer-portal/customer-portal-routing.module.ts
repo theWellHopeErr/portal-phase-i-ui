@@ -13,6 +13,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { PaymentsAgingComponent } from './payments-aging/payments-aging.component';
 import { CdMemoComponent } from './cd-memo/cd-memo.component';
 import { OverallSalesComponent } from './overall-sales/overall-sales.component';
+import { CustomerMasterComponent } from './customer-master/customer-master.component';
+import { InquiryDetailsComponent } from './inquiry-details/inquiry-details.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,10 @@ const routes: Routes = [
       {
         path: 'inquiry',
         component: InquiryComponent,
+      },
+      {
+        path: 'inquiry-details/:sd',
+        component: InquiryDetailsComponent,
       },
       {
         path: 'sales-order',
@@ -60,6 +66,10 @@ const routes: Routes = [
       {
         path: 'overall-sales',
         component: OverallSalesComponent,
+      },
+      {
+        path: 'customer-master',
+        component: CustomerMasterComponent,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -12,9 +13,10 @@ export class TableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   @Input() tableConfig;
+  @Input() onClicker: (args: any) => void;
   displayedColumns: any[];
 
-  constructor() {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {}
 
@@ -29,5 +31,9 @@ export class TableComponent implements OnInit {
 
   doFilter = (value: string) => {
     this.tableConfig.dataSource.filter = value.trim().toLocaleLowerCase();
+  };
+
+  clicker = (key) => {
+    this.onClicker(key);
   };
 }

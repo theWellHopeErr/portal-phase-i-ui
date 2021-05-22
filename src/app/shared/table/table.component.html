@@ -1,6 +1,6 @@
 <div class="table-wrapper">
   <div
-    *ngIf="tableConfig.columns.length > 5"
+    *ngIf="tableConfig.dataSource.filteredData.length > 5"
     fxLayout
     fxLayoutAlign="center center"
   >
@@ -9,7 +9,7 @@
         matInput
         type="text"
         (keyup)="doFilter($event.target.value)"
-        placeholder="Filter"
+        placeholder="Type to filter list..."
       />
     </mat-form-field>
   </div>
@@ -22,14 +22,19 @@
       <th mat-header-cell mat-sort-header *matHeaderCellDef>
         {{ column.title }}
       </th>
-      <td mat-cell *matCellDef="let element">
-        {{ element[column.name] }}
+      <td
+        mat-cell
+        *matCellDef="let element"
+        (click)="clicker(element[displayedColumns[0]])"
+      >
+        {{ element[column.name] | table: pipes:column }}
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
   <mat-paginator
+    *ngIf="tableConfig.dataSource.filteredData.length > 5"
     [pageSize]="5"
     [pageSizeOptions]="[5, 10, 50, 100, 250, 500, 1000]"
   >

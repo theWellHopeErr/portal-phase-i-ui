@@ -34,7 +34,7 @@ export class FincancialSheetComponent implements OnInit {
       description:
         'To display the sale orders recorded between the logon customer and the company.',
       icon: 'featured_play_list',
-      iconColor: '#ffd356',
+      iconColor: '#ff567d',
     },
     cd: {
       title: 'Credit/Debit Memo',
@@ -50,7 +50,7 @@ export class FincancialSheetComponent implements OnInit {
       description:
         'To view the history of deliveries recorded from the company and the logon customer.',
       icon: 'analytics',
-      iconColor: '#ff567d',
+      iconColor: '#ffd356',
     },
   };
 

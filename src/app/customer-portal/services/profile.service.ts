@@ -9,9 +9,7 @@ export class ProfileService {
   constructor(private http: HttpClient, private authService: AuthService) {}
 
   get() {
-    return this.http.get(
-      `api/customer/profile?cust_id=${this.authService.currentUserValue.username}`
-    );
+    return this.http.get(`api/customer/profile`);
   }
 
   edit(profileData) {

@@ -10,6 +10,7 @@ table {
 .mat-cell {
   padding: 1em;
   font-size: 0.8em;
+  text-align: center;
 }
 
 th.mat-header-cell {
