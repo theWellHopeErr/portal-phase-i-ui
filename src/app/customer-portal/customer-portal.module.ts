@@ -35,6 +35,8 @@ import { CdMemoComponent } from './cd-memo/cd-memo.component';
 import { OverallSalesComponent } from './overall-sales/overall-sales.component';
 import { CustomerMasterComponent } from './customer-master/customer-master.component';
 import { InquiryDetailsComponent } from './inquiry-details/inquiry-details.component';
+import { SoDetailsComponent } from './so-details/so-details.component';
+import { LodDetailsComponent } from './lod-details/lod-details.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { InquiryDetailsComponent } from './inquiry-details/inquiry-details.compo
     OverallSalesComponent,
     CustomerMasterComponent,
     InquiryDetailsComponent,
+    SoDetailsComponent,
+    LodDetailsComponent,
   ],
   imports: [
     CommonModule,

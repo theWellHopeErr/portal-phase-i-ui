@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
         next: () => {
           this.router.navigate([`/${this.f.role.value}/dashboard`]);
           this.snackService.openSnackBar(`You're logged in!!`);
+          this.loading = false;
         },
         error: (error) => {
           this.error = error.error.message;

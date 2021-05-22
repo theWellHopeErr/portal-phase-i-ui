@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SdService } from '../services/sd.service';
 
 @Component({
-  selector: 'app-inquiry-details',
-  templateUrl: './inquiry-details.component.html',
-  styleUrls: ['./inquiry-details.component.css'],
+  selector: 'app-so-details',
+  templateUrl: './so-details.component.html',
+  styleUrls: ['./so-details.component.css'],
 })
-export class InquiryDetailsComponent implements OnInit {
+export class SoDetailsComponent implements OnInit {
   constructor(
     private titleService: Title,
     private location: Location,
@@ -18,7 +18,7 @@ export class InquiryDetailsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.titleService.setTitle(`Inquiry Details | Customer Portal`);
+    this.titleService.setTitle(`Sales Order Details | Customer Portal`);
     this.route.params.subscribe((params) => (this.sd = params.sd));
   }
 
@@ -41,20 +41,20 @@ export class InquiryDetailsComponent implements OnInit {
   sd: string;
 
   ngOnInit(): void {
-    this.sdService.getInquiryDetails(this.sd).subscribe(
+    this.sdService.getSaleOrderDetails(this.sd).subscribe(
       (res: any) => {
         this.tableConfig['dataSource'] = new MatTableDataSource([res.item]);
         this.loading = false;
       },
       (_err) => {
-        this.error = `No Inquiry Records found for Salesdocument: ${this.sd}`;
+        this.error = `No Sales Order Records found for Salesdocument: ${this.sd}`;
       }
     );
   }
 
   onClicker(key): void {
     this.loading = true;
-    this.router.navigate([`customer/inquiry-details/${key}`]);
+    this.router.navigate([`customer/so-details/${key}`]);
   }
 
   goBack(): void {

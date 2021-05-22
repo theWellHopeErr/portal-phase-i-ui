@@ -15,6 +15,8 @@ import { CdMemoComponent } from './cd-memo/cd-memo.component';
 import { OverallSalesComponent } from './overall-sales/overall-sales.component';
 import { CustomerMasterComponent } from './customer-master/customer-master.component';
 import { InquiryDetailsComponent } from './inquiry-details/inquiry-details.component';
+import { SoDetailsComponent } from './so-details/so-details.component';
+import { LodDetailsComponent } from './lod-details/lod-details.component';
 
 const routes: Routes = [
   {
@@ -43,8 +45,16 @@ const routes: Routes = [
         component: SalesOrderComponent,
       },
       {
+        path: 'so-details/:sd',
+        component: SoDetailsComponent,
+      },
+      {
         path: 'lod',
         component: LodComponent,
+      },
+      {
+        path: 'lod-details/:sd',
+        component: LodDetailsComponent,
       },
 
       {
