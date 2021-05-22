@@ -3,10 +3,12 @@
 }
 
 mat-card {
-  height: 34em;
-  margin: 1em 2em;
-  min-width: 69em;
+  min-height: 34em;
   width: fit-content;
+  min-width: 69em;
+  height: fit-content;
+  margin: 1em 2em;
+  cursor: pointer;
 }
 
 .error-msg {
