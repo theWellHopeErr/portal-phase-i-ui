@@ -2,10 +2,6 @@
   background: #ff5656;
 }
 
-.sidenav-container {
-  height: 100%;
-}
-
 .sidenav {
   width: 200px;
   background: #ff5656;
@@ -67,4 +63,12 @@
 
 nav-item {
   background: #ff5656;
+}
+
+.nav-list-header {
+  font-size: 1.2em;
+}
+
+.mat-sidenav-content {
+  margin-left: 200px;
 }

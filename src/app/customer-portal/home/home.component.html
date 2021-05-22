@@ -1,3 +1,19 @@
+<div class="mat-sidenav-content">
+  <mat-toolbar color="primary">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <mat-icon class="mr-1">face</mat-icon>
+    <span class="ml-1">Customer Portal</span>
+  </mat-toolbar>
+</div>
+
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -11,7 +27,6 @@
       <mat-icon
         class="account-icon m-auto"
         routerLink="/customer/profile"
-        [ngClass]="{ 'active-nav-item': routerLink === 'profile' }"
         routerLinkActive="router-link-active"
         >account_circle</mat-icon
       >
@@ -21,6 +36,7 @@
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'dashboard' }"
         href="/customer/dashboard"
+        class="nav-list-header"
         ><u>Dashboard</u></a
       >
 
@@ -48,6 +64,7 @@
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'fincancial-sheet' }"
+        class="nav-list-header"
         href="/customer/fincancial-sheet"
         ><u>Fincancial Sheet</u>
       </a>
@@ -82,7 +99,7 @@
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'overall-sales' }"
-        href="/customer/overall-sales"
+        href="/customer/customer-master"
         >Master Data Upload
       </a>
     </mat-nav-list>
@@ -94,19 +111,6 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <mat-icon class="mr-1">face</mat-icon>
-      <span class="ml-1">Customer Portal</span>
-    </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

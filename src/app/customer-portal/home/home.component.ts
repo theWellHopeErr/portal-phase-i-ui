@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
     if (currentUser) {
       this.username = currentUser.username;
     }
-    console.log(this.routerLink);
   }
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)

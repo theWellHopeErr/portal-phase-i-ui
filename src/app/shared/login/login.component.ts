@@ -49,7 +49,11 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
     this.authService
-      .login(this.f.username.value, this.f.password.value, this.f.role.value)
+      .login(
+        this.f.username.value.toUpperCase(),
+        this.f.password.value,
+        this.f.role.value
+      )
       .pipe(first())
       .subscribe({
         next: () => {
