@@ -15,6 +15,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 import { FilePondModule, registerPlugin } from 'ngx-filepond';
 import * as FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 registerPlugin(FilePondPluginFileValidateType);
@@ -75,6 +76,7 @@ import { LodDetailsComponent } from './lod-details/lod-details.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
     FilePondModule,
   ],
   exports: [CustomerPortalLandingComponent],
