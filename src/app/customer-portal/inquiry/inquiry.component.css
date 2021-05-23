@@ -8,7 +8,6 @@ mat-card {
   min-width: 69em;
   height: fit-content;
   margin: 1em 2em;
-  cursor: pointer;
 }
 
 .error-msg {

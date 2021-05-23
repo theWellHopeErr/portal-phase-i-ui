@@ -24,8 +24,9 @@
       </th>
       <td
         mat-cell
+        [ngStyle]="{ cursor: isClickable ? 'pointer' : 'auto' }"
         *matCellDef="let element"
-        (click)="clicker(element[displayedColumns[0]])"
+        (click)="isClickable && clicker(element[displayedColumns[0]])"
       >
         {{ element[column.name] | table: pipes:column }}
       </td>

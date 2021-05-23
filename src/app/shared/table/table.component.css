@@ -17,3 +17,7 @@ th.mat-header-cell {
   text-align: left;
   font-weight: 700;
 }
+
+::ng-deep .mat-sort-header-container {
+  justify-content: center;
+}

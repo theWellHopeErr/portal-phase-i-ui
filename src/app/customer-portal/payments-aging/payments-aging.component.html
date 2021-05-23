@@ -1,1 +1,20 @@
-<p>payments-aging works!</p>
+<button mat-button (click)="goBack()">
+  <mat-icon>arrow_back_ios</mat-icon>Back
+</button>
+
+<mat-card>
+  <mat-card-title>Payments & Aging Details</mat-card-title>
+  <mat-card-content>
+    <div *ngIf="error" class="error-msg">{{ error }}</div>
+    <div class="loading-wrapper" *ngIf="loading && !error">
+      <img
+        class="loading-gif"
+        src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
+      />
+    </div>
+    <app-table
+      *ngIf="!loading && !error"
+      [tableConfig]="tableConfig"
+    ></app-table>
+  </mat-card-content>
+</mat-card>

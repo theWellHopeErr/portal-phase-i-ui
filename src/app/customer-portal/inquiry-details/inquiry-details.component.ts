@@ -52,10 +52,7 @@ export class InquiryDetailsComponent implements OnInit {
     );
   }
 
-  onClicker(key): void {
-    this.loading = true;
-    this.router.navigate([`customer/inquiry-details/${key}`]);
-  }
+  onClicker(key): void {}
 
   goBack(): void {
     this.location.back();

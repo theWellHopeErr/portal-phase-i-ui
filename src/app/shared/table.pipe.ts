@@ -7,6 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TablePipe implements PipeTransform {
   constructor(
     private upperCasePipe: UpperCasePipe,
+    private decimalPipe: DecimalPipe,
     private datePipe: DatePipe
   ) {}
   transform(value: string, _t, obj) {
@@ -17,6 +18,8 @@ export class TablePipe implements PipeTransform {
         return value ? this.datePipe.transform(value) : '-';
       case 'string':
         return value ? this.upperCasePipe.transform(value) : '-';
+      case 'currency':
+        return value ? this.decimalPipe.transform(value, '1.2-2') : '-';
       default:
         return value;
     }

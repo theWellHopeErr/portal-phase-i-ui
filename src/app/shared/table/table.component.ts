@@ -15,6 +15,7 @@ export class TableComponent implements OnInit {
   @Input() tableConfig;
   @Input() onClicker: (args: any) => void;
   displayedColumns: any[];
+  isClickable: boolean;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
@@ -27,6 +28,7 @@ export class TableComponent implements OnInit {
 
   ngAfterContentInit(): void {
     this.displayedColumns = this.tableConfig.columns.map((col) => col.name);
+    this.isClickable = !!this.onClicker;
   }
 
   doFilter = (value: string) => {
