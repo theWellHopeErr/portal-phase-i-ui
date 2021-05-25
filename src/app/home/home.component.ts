@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatAccordion } from '@angular/material/expansion';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +6,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  @ViewChild(MatAccordion) accordion: MatAccordion;
-  constructor(private router: Router) {}
+  constructor() {}
+  showPhaseOne = false;
+  showPhaseTwo = false;
+  showPhaseThree = false;
 
   ngOnInit(): void {}
 
-  navigate(path: string): void {
-    this.router.navigate([path]);
+  showPhase(phase: 1 | 2 | 3): void {
+    console.log(phase);
+    switch (phase) {
+      case 1:
+        this.showPhaseOne = false;
+        this.showPhaseTwo = false;
+        this.showPhaseThree = true;
+        break;
+      case 2:
+        this.showPhaseOne = false;
+        this.showPhaseTwo = true;
+        this.showPhaseThree = false;
+        break;
+      case 3:
+        this.showPhaseOne = false;
+        this.showPhaseTwo = false;
+        this.showPhaseThree = true;
+        break;
+    }
   }
 }

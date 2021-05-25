@@ -1,0 +1,122 @@
+.home {
+  display: flex;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+}
+.portal-title {
+  margin-bottom: 1em;
+  font-size: 3em;
+}
+
+.about {
+  width: 50%;
+  height: 100vh;
+  padding: 3em;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+mat-panel-title {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+mat-list-item {
+  font-size: 0.8em;
+}
+
+.portals-list {
+  text-align: left;
+}
+
+.pending-icon {
+  color: #ffc800;
+}
+
+.completed-icon {
+  color: #39e600;
+}
+
+.ui-link {
+  float: left;
+}
+.server-link {
+  float: right;
+}
+
+.portal-menu {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding: 2em;
+}
+
+mat-card {
+  margin: 0 2em;
+}
+mat-card-title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+mat-card-subtitle {
+  text-align: left;
+  font-weight: 500;
+}
+
+mat-icon {
+  margin-right: 0.5em;
+}
+
+.customer {
+  color: #ff5656;
+  box-shadow: 0px 0px 4px 2px #ff5656;
+}
+
+.customer:hover {
+  box-shadow: 0px 0px 4px 6px #ff5656;
+  cursor: pointer;
+}
+
+.vendor {
+  color: #5682ff;
+  box-shadow: 0px 0px 4px 2px #5682ff;
+}
+
+.vendor:hover {
+  box-shadow: 0px 0px 4px 6px #5682ff;
+  cursor: pointer;
+}
+
+.employee {
+  color: #ffb456;
+  box-shadow: 0px 0px 4px 2px #ffb456;
+}
+
+.employee:hover {
+  box-shadow: 0px 0px 4px 6px #ffb456;
+  cursor: pointer;
+}
+
+.about::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+.about::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px #5682ff;
+}
+
+.about::-webkit-scrollbar-thumb {
+  border-radius: 5%;
+  background-color: #5682ff;
+  outline: 1px solid #5682ff;
+}

@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,9 +18,10 @@ import { VendorPortalModule } from './vendor-portal/vendor-portal.module';
 import { EmployeePortalModule } from './employee-portal/employee-portal.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { PhaseOneComponent } from './phase-one/phase-one.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, PhaseOneComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,6 +36,7 @@ import { AuthInterceptor } from './shared/auth.interceptor';
     MatCardModule,
     MatIconModule,
     MatExpansionModule,
+    MatToolbarModule,
   ],
   providers: [
     {

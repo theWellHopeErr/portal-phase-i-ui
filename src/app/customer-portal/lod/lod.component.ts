@@ -29,8 +29,7 @@ export class LodComponent implements OnInit {
       { name: 'NETWR', title: 'Net Value', pipe: 'currency' },
       { name: 'WAERK', title: 'Currency', pipe: 'string' },
       { name: 'VKORG', title: 'Sales Orgnization', pipe: 'string' },
-      { name: 'VTWEG', title: 'Distribution Channel', pipe: 'string' },
-      { name: 'SPART', title: 'Division', pipe: 'string' },
+      { name: 'KUNNR', title: 'Sold To Party', pipe: 'string' },
     ],
   };
   loading = true;

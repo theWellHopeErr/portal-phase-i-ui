@@ -13,29 +13,6 @@ export class MasterDataComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  name = 'Angular';
-  @ViewChild('myPond') myPond: any;
-
-  pondOptions = {
-    class: 'my-filepond',
-    multiple: true,
-    labelIdle: 'Drop files here',
-    acceptedFileTypes: 'image/jpeg, image/png',
-  };
-
-  myFiles = [];
-
-  pondHandleInit() {
-    console.log('FilePond has initialised', this.myPond);
-  }
-
-  pondHandleAddFile(event: any) {
-    console.log('A file was added', event);
-  }
-
-  handleFilePondInit = () => {};
-
   goBack(): void {
     this.location.back();
   }

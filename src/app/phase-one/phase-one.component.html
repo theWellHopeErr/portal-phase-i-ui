@@ -1,0 +1,53 @@
+<div class="home">
+  <!-- About -->
+  <div class="about">
+    <h1 class="portal-title">Portal Phase I</h1>
+
+    <h4>Developed by <b>Suryarajan S</b>.</h4>
+    <h5>Training Batch III.</h5>
+  </div>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+  <!-- Portal Menu -->
+  <div class="portal-menu">
+    <mat-list-item role="listitem">
+      <mat-card class="customer mb-5" (click)="navigate('customer')">
+        <mat-card-title>
+          <mat-icon>face</mat-icon>
+          Customer Portal</mat-card-title
+        >
+        <mat-card-subtitle>
+          A portal where data of all the customers carrying out business with an
+          organization is maintained.
+        </mat-card-subtitle>
+      </mat-card>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+      <mat-card class="vendor mb-5" (click)="navigate('vendor')">
+        <mat-card-title>
+          <mat-icon>shopping_cart</mat-icon>
+          Vendor Portal
+        </mat-card-title>
+        <mat-card-subtitle>
+          A portal where data of all the vendors carrying out business with an
+          organization is maintained.
+        </mat-card-subtitle>
+      </mat-card>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+      <mat-card class="employee" (click)="navigate('employee')">
+        <mat-card-title>
+          <mat-icon>groups</mat-icon>
+          Employee Portal</mat-card-title
+        >
+        <mat-card-subtitle>
+          A portal to have quick and easy access to HR-related transactions and
+          services.
+        </mat-card-subtitle>
+      </mat-card>
+    </mat-list-item>
+  </div>
+</div>

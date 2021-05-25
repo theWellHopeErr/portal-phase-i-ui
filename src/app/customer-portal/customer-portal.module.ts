@@ -16,13 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
-// import { FilePondModule, registerPlugin } from 'ngx-filepond';
-// import * as FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
-// registerPlugin(FilePondPluginFileValidateType);
-import { FilePondModule, registerPlugin } from 'angular-filepond';
-
-// import * as FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.esm';
-// registerPlugin(FilePondPluginFileValidateType);
 
 import { CustomerPortalLandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
@@ -81,7 +74,6 @@ import { LodDetailsComponent } from './lod-details/lod-details.component';
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
-    FilePondModule,
   ],
   exports: [CustomerPortalLandingComponent],
 })

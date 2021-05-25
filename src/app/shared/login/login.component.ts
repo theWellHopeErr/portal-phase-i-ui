@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
@@ -21,8 +22,10 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authService: AuthService,
-    private snackService: SnackService
+    private snackService: SnackService,
+    private titleService: Title
   ) {
+    this.titleService.setTitle('Login');
     if (this.authService.currentUserValue) {
       this.router.navigate([`/${this.authService.currentUserValue.role}`]);
     }
