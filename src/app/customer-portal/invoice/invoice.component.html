@@ -1,1 +1,23 @@
-<p>invoice works!</p>
+<button mat-button (click)="goBack()">
+  <mat-icon>arrow_back_ios</mat-icon>Back
+</button>
+
+<mat-card>
+  <mat-card-title>Invoice IRPA Automation</mat-card-title>
+  <mat-card-content>
+    <h5>IRPA Screen Recording</h5>
+    <video autoplay loop>
+      <source src="../../../assets/videos/irpa.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="excel-wrapper">
+      <h5>
+        Excel Sheet with the Collected Data -
+        <a href="../../../assets/invoice.xlsx">invoice.xlsx</a>
+      </h5>
+
+      <embed src="../../../assets/invoice.pdf" width="1000px" height="760px" />
+    </div>
+  </mat-card-content>
+</mat-card>

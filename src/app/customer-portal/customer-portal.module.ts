@@ -17,6 +17,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { VgStreamingModule } from '@videogular/ngx-videogular/streaming';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+
 import { CustomerPortalLandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
 import { CustomerPortalRoutingModule } from './customer-portal-routing.module';
@@ -74,6 +80,11 @@ import { LodDetailsComponent } from './lod-details/lod-details.component';
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
+
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
   ],
   exports: [CustomerPortalLandingComponent],
 })

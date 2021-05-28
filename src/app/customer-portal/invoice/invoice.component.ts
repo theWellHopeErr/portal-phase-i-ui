@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -7,9 +8,13 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./invoice.component.css'],
 })
 export class InvoiceComponent implements OnInit {
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title, private location: Location) {
     this.titleService.setTitle('Invoice Details | Customer Portal');
   }
 
   ngOnInit(): void {}
+
+  goBack(): void {
+    this.location.back();
+  }
 }
