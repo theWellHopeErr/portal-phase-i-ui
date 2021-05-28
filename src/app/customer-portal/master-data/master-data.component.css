@@ -9,3 +9,39 @@ mat-card {
   height: fit-content;
   margin: 1em 2em;
 }
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+table {
+  margin: auto;
+  border: 1px solid #efefef;
+  width: auto;
+}
+
+.content-wrapper .mat-raised-button {
+  background: #ff5656;
+  color: #f0f8ff;
+}
+
+.content-wrapper .mat-raised-button:hover {
+  box-shadow: 0px 0px 4px 6px #ff565694;
+  cursor: pointer;
+}
+
+.cust-wrapper {
+  height: 400px;
+  background: #f1f0ef;
+  border-radius: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::ng-deep .filepond--root .filepond--credits {
+  display: none;
+}

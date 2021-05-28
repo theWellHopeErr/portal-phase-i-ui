@@ -24,9 +24,13 @@
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
     "@videogular/ngx-videogular": "^3.0.1",
+    "filepond": "^4.27.2",
+    "filepond-plugin-file-validate-type": "^1.2.6",
+    "ngx-filepond": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "videogular2": "^7.0.2",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
