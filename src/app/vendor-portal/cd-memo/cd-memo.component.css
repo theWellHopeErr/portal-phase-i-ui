@@ -1,0 +1,36 @@
+.mat-button {
+  margin: 1em 0 0 2em;
+}
+
+mat-card {
+  min-height: 34em;
+  width: fit-content;
+  min-width: 69em;
+  height: fit-content;
+  margin: 1em 2em;
+}
+
+::ng-deep .mat-tab-label {
+  width: 100%;
+}
+
+.error-msg {
+  text-align: center;
+}
+
+.loading-wrapper {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.loading-gif {
+  width: 25%;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: #0000;
+}
