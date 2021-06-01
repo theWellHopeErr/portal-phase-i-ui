@@ -58,16 +58,16 @@ export class LoginComponent implements OnInit {
         this.f.role.value
       )
       .pipe(first())
-      .subscribe({
-        next: () => {
+      .subscribe(
+        (res: any) => {
           this.router.navigate([`/${this.f.role.value}/dashboard`]);
           this.snackService.openSnackBar(`You're logged in!!`);
           this.loading = false;
         },
-        error: (error) => {
-          this.error = error.error.message;
+        (err) => {
+          this.error = err.toString().split(' ')[6];
           this.loading = false;
-        },
-      });
+        }
+      );
   }
 }

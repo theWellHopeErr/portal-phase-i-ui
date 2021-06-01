@@ -104,3 +104,8 @@ header,
 .about-content {
   padding-left: 7em;
 }
+
+.intro {
+  justify-content: space-between;
+  align-items: center;
+}
