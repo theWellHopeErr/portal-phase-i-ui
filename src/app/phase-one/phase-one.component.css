@@ -1,122 +1,111 @@
-.home {
-  display: flex;
-  text-align: center;
+html,
+body,
+header,
+.view {
+  height: 100%;
 }
 
-h1 {
-  font-weight: 900;
-}
-.portal-title {
-  margin-bottom: 1em;
-  font-size: 3em;
+.navbar {
+  background-color: #00000094 !important;
 }
 
-.about {
-  width: 50%;
-  height: 100vh;
-  padding: 3em;
-  overflow: auto;
+.view {
+  background: -webkit-linear-gradient(45deg, #68d0ff, #453cf5 100%);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-mat-panel-title {
-  font-size: 1.3em;
-  font-weight: 500;
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
 }
 
-mat-list-item {
-  font-size: 0.8em;
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 650px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #1c2331 !important;
+  }
+}
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.portals-list {
-  text-align: left;
+.top-nav-collapse {
+  background-color: #1c2331;
 }
 
-.pending-icon {
-  color: #ffc800;
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1c2331;
+  }
 }
 
-.completed-icon {
-  color: #39e600;
+/* Footer color for sake of consistency with Navbar */
+.page-footer {
+  background-color: #1c2331;
 }
 
-.ui-link {
-  float: left;
-}
-.server-link {
-  float: right;
-}
-
-.portal-menu {
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  place-content: center;
-  padding: 2em;
-}
-
-mat-card {
-  margin: 0 2em;
-}
-mat-card-title {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-}
-
-mat-card-subtitle {
-  text-align: left;
-  font-weight: 500;
-}
-
-mat-icon {
-  margin-right: 0.5em;
-}
-
-.customer {
-  color: #ff5656;
-  box-shadow: 0px 0px 4px 2px #ff5656;
-}
-
-.customer:hover {
-  box-shadow: 0px 0px 4px 6px #ff5656;
-  cursor: pointer;
-}
-
-.vendor {
+.phase-i {
   color: #5682ff;
   box-shadow: 0px 0px 4px 2px #5682ff;
 }
 
-.vendor:hover {
+.phase-i:hover {
   box-shadow: 0px 0px 4px 6px #5682ff;
   cursor: pointer;
 }
 
-.employee {
+.phase-ii {
   color: #ffb456;
+  height: 232px;
   box-shadow: 0px 0px 4px 2px #ffb456;
 }
 
-.employee:hover {
+.phase-ii:hover {
   box-shadow: 0px 0px 4px 6px #ffb456;
   cursor: pointer;
 }
 
-.about::-webkit-scrollbar {
-  width: 0.2em;
+.phase-iii {
+  color: #ff5656;
+  box-shadow: 0px 0px 4px 2px #ff5656;
 }
 
-.about::-webkit-scrollbar-track {
-  box-shadow: 0 0 6px #5682ff;
+.phase-iii:hover {
+  box-shadow: 0px 0px 4px 6px #ff5656;
+  cursor: pointer;
 }
 
-.about::-webkit-scrollbar-thumb {
-  border-radius: 5%;
-  background-color: #5682ff;
-  outline: 1px solid #5682ff;
+.card-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.footer {
+  color: #f0f8ff;
+  font-weight: 200;
+}
+
+.about-content {
+  padding-left: 7em;
+}
+
+.intro {
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,111 +1,122 @@
-html,
-body,
-header,
-.view {
-  height: 100%;
+.home {
+  display: flex;
+  text-align: center;
 }
 
-.navbar {
-  background-color: #00000094 !important;
+h1 {
+  font-weight: 900;
+}
+.portal-title {
+  margin-bottom: 1em;
+  font-size: 3em;
 }
 
-.view {
-  background: -webkit-linear-gradient(45deg, #68d0ff, #453cf5 100%);
+.about {
+  width: 50%;
+  height: 100vh;
+  padding: 3em;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-@media (max-width: 740px) {
-  html,
-  body,
-  header,
-  .view {
-    height: 1000px;
-  }
+mat-panel-title {
+  font-size: 1.3em;
+  font-weight: 500;
 }
 
-@media (min-width: 800px) and (max-width: 850px) {
-  html,
-  body,
-  header,
-  .view {
-    height: 650px;
-  }
-}
-@media (min-width: 800px) and (max-width: 850px) {
-  .navbar:not(.top-nav-collapse) {
-    background: #1c2331 !important;
-  }
-}
-/* Navbar animation */
-.navbar {
-  background-color: rgba(0, 0, 0, 0.3);
+mat-list-item {
+  font-size: 0.8em;
 }
 
-.top-nav-collapse {
-  background-color: #1c2331;
+.portals-list {
+  text-align: left;
 }
 
-/* Adding color to the Navbar on mobile */
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #1c2331;
-  }
+.pending-icon {
+  color: #ffc800;
 }
 
-/* Footer color for sake of consistency with Navbar */
-.page-footer {
-  background-color: #1c2331;
+.completed-icon {
+  color: #39e600;
 }
 
-.phase-i {
-  color: #5682ff;
-  box-shadow: 0px 0px 4px 2px #5682ff;
+.ui-link {
+  float: left;
+}
+.server-link {
+  float: right;
 }
 
-.phase-i:hover {
-  box-shadow: 0px 0px 4px 6px #5682ff;
-  cursor: pointer;
+.portal-menu {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding: 2em;
 }
 
-.phase-ii {
-  color: #ffb456;
-  height: 232px;
-  box-shadow: 0px 0px 4px 2px #ffb456;
+mat-card {
+  margin: 0 2em;
+}
+mat-card-title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
 }
 
-.phase-ii:hover {
-  box-shadow: 0px 0px 4px 6px #ffb456;
-  cursor: pointer;
+mat-card-subtitle {
+  text-align: left;
+  font-weight: 500;
 }
 
-.phase-iii {
+mat-icon {
+  margin-right: 0.5em;
+}
+
+.customer {
   color: #ff5656;
   box-shadow: 0px 0px 4px 2px #ff5656;
 }
 
-.phase-iii:hover {
+.customer:hover {
   box-shadow: 0px 0px 4px 6px #ff5656;
   cursor: pointer;
 }
 
-.card-title {
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: 700;
+.vendor {
+  color: #5682ff;
+  box-shadow: 0px 0px 4px 2px #5682ff;
 }
 
-.footer {
-  color: #f0f8ff;
-  font-weight: 200;
+.vendor:hover {
+  box-shadow: 0px 0px 4px 6px #5682ff;
+  cursor: pointer;
 }
 
-.about-content {
-  padding-left: 7em;
+.employee {
+  color: #ffb456;
+  box-shadow: 0px 0px 4px 2px #ffb456;
 }
 
-.intro {
-  justify-content: space-between;
-  align-items: center;
+.employee:hover {
+  box-shadow: 0px 0px 4px 6px #ffb456;
+  cursor: pointer;
+}
+
+.about::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+.about::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px #5682ff;
+}
+
+.about::-webkit-scrollbar-thumb {
+  border-radius: 5%;
+  background-color: #5682ff;
+  outline: 1px solid #5682ff;
 }

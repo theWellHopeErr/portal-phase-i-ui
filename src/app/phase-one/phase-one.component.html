@@ -1,53 +1,346 @@
-<div class="home">
-  <!-- About -->
-  <div class="about">
-    <h1 class="portal-title">Portal Phase I</h1>
+<nav
+  class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
+  *ngIf="!showPhaseOne && !showPhaseTwo && !showPhaseThree"
+>
+  <div class="container">
+    <a
+      class="navbar-brand"
+      href="https://www.kaartech.com/"
+      target="_blank"
+      noopener
+    >
+      <strong>Kaar Technologies</strong>
+    </a>
 
-    <h4>Developed by <b>Suryarajan S</b>.</h4>
-    <h5>Training Batch III.</h5>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about"> About </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portals"> Portals </a>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <mat-divider [vertical]="true"></mat-divider>
+<div
+  class="view full-page-intro"
+  *ngIf="!showPhaseOne && !showPhaseTwo && !showPhaseThree"
+>
+  <div
+    class="
+      mask
+      rgba-black-light
+      d-flex
+      justify-content-center
+      align-items-center
+    "
+  >
+    <div class="container">
+      <div class="row wow fadeIn intro">
+        <div class="col-md-6 mb-4 white-text text-center text-md-left">
+          <h2 class="font-weight-bold">
+            Improving Business Results by Empowering People with Portal
+            Solutions
+          </h2>
 
-  <!-- Portal Menu -->
-  <div class="portal-menu">
-    <mat-list-item role="listitem">
-      <mat-card class="customer mb-5" (click)="navigate('customer')">
-        <mat-card-title>
-          <mat-icon>face</mat-icon>
-          Customer Portal</mat-card-title
-        >
-        <mat-card-subtitle>
-          A portal where data of all the customers carrying out business with an
-          organization is maintained.
-        </mat-card-subtitle>
-      </mat-card>
-    </mat-list-item>
+          <hr class="hr-light" />
 
-    <mat-list-item role="listitem">
-      <mat-card class="vendor mb-5" (click)="navigate('vendor')">
-        <mat-card-title>
-          <mat-icon>shopping_cart</mat-icon>
-          Vendor Portal
-        </mat-card-title>
-        <mat-card-subtitle>
-          A portal where data of all the vendors carrying out business with an
-          organization is maintained.
-        </mat-card-subtitle>
-      </mat-card>
-    </mat-list-item>
-
-    <mat-list-item role="listitem">
-      <mat-card class="employee" (click)="navigate('employee')">
-        <mat-card-title>
-          <mat-icon>groups</mat-icon>
-          Employee Portal</mat-card-title
-        >
-        <mat-card-subtitle>
-          A portal to have quick and easy access to HR-related transactions and
-          services.
-        </mat-card-subtitle>
-      </mat-card>
-    </mat-list-item>
+          <p class="mb-4 d-none d-md-block">
+            <strong>
+              Portal Solutions provide the best Business Solutions for all
+              scenarios with the best User Interface to ensure the best
+              experience for all customers.
+            </strong>
+          </p>
+        </div>
+        <div>
+          <img src="../../assets/img/pc.png" height="350px" />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<main *ngIf="!showPhaseOne && !showPhaseTwo && !showPhaseThree">
+  <div class="container">
+    <hr class="my-5" />
+    <section id="about" class="about">
+      <h3 class="h3 text-center mb-5">About</h3>
+      <div class="row wow fadeIn">
+        <div class="col-lg-6 col-md-12">
+          <img
+            src="https://img.freepik.com/free-vector/computer-monitor-graphic-animator-creating-video-game-modeling-motion-processing-video-file-using-professional-editor-vector-illustration-graphic-design-art-designer-workplace-concept_74855-13038.jpg"
+          />
+        </div>
+        <div class="col-lg-6 col-md-12 about-content">
+          <div class="row">
+            <div class="col-10">
+              <h4 class="font-weight-bold">
+                Portal Solutions for Better Business Solutions
+              </h4>
+            </div>
+          </div>
+          <div style="height: 30px"></div>
+          <div class="row">
+            <div class="col-10">
+              <p class="grey-text">
+                Kaar Tech presents Portal Solutions, developed to cover all
+                business scenarios providing the best solution for the
+                customer's needs.
+              </p>
+            </div>
+          </div>
+          <div style="height: 30px"></div>
+          <div class="row">
+            <div class="col-10">
+              <p class="grey-text">
+                Portal Solutions are used in over 10M companies for their daily
+                use and all their business needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section>
+      <h2 class="my-5 h3 text-center">What are the Portals?</h2>
+      <div class="row features-small mb-5 mt-3 wow fadeIn">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">Customer Portal</h6>
+              <p class="grey-text">
+                A portal where data of all the customers carrying out business
+                with an organization is maintained.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">Vendor Portal</h6>
+              <p class="grey-text">
+                A portal where data of all the vendors carrying out business
+                with an organization is maintained.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">Employee Portal</h6>
+              <p class="grey-text">
+                A portal to have quick and easy access to HR-related
+                transactions and services.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">Maintenance Portal</h6>
+              <p class="grey-text">
+                A portal where data of all the vendors carrying out business
+                with an organization is maintained.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 flex-center">
+          <img
+            src="https://mdbootstrap.com/img/Others/screens.png"
+            alt="MDB Magazine Template displayed on iPhone"
+            class="z-depth-0 img-fluid"
+          />
+        </div>
+
+        <div class="col-md-4 mt-2">
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">Shop Portal</h6>
+              <p class="grey-text">
+                A portal where data of all the vendors carrying out business
+                with an organization is maintained.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">EHSM Portal</h6>
+              <p class="grey-text">
+                A portal where data of all the vendors carrying out business
+                with an organization is maintained.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-2">
+              <i class="fas fa-check-circle fa-2x indigo-text"></i>
+            </div>
+            <div class="col-10">
+              <h6 class="feature-title">Quality Portal</h6>
+              <p class="grey-text">
+                A portal where data of all the vendors carrying out business
+                with an organization is maintained.
+              </p>
+              <div style="height: 15px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="mb-5" />
+
+    <section id="portals" class="portals">
+      <h2 class="my-5 h3 text-center">Portals</h2>
+      <div class="row features-small mt-5 wow fadeIn">
+        <div class="col-xl-4 col-lg-1">
+          <div class="row">
+            <div class="col-2">
+              <i
+                class="fab fa-firefox fa-2x mb-1 indigo-text"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="col-10 mb-2 pl-3">
+              <mat-card class="phase-i mb-5" (click)="showPhase(1)">
+                <div class="card-title">Phase I</div>
+                <mat-content>
+                  <mat-list>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>Customer Portal
+                    </mat-list-item>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>Vendor Portal
+                    </mat-list-item>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>Employee Portal
+                    </mat-list-item>
+                  </mat-list>
+                </mat-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-1">
+          <div class="row">
+            <div class="col-2">
+              <i
+                class="fas fa-level-up-alt fa-2x mb-1 indigo-text"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="col-10 mb-2">
+              <mat-card class="phase-ii mb-5" (click)="showPhase(2)">
+                <div class="card-title">Phase II</div>
+                <mat-content>
+                  <mat-list>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>Maintenance Portal
+                    </mat-list-item>
+                  </mat-list>
+                </mat-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-1">
+          <div class="row">
+            <div class="col-2">
+              <i
+                class="fas fa-comments fa-2x mb-1 indigo-text"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="col-10 mb-2">
+              <mat-card class="phase-iii mb-5" (click)="showPhase(3)">
+                <div class="card-title">Phase III</div>
+                <mat-content>
+                  <mat-list>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>Shop Floor Portal
+                    </mat-list-item>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>EHSM Portal
+                    </mat-list-item>
+                    <mat-list-item>
+                      <mat-icon>chevron_right</mat-icon>Quality Portal
+                    </mat-list-item>
+                  </mat-list>
+                </mat-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer
+  class="page-footer text-center font-small mt-4 wow fadeIn"
+  *ngIf="!showPhaseOne && !showPhaseTwo && !showPhaseThree"
+>
+  <div class="footer py-3">
+    © 2021 Copyright:
+    <span class="font-weight-bolder">S Suryarajan</span>
+  </div>
+</footer>
+
+<app-phase-one *ngIf="showPhaseOne"></app-phase-one>
+<app-phase-one *ngIf="showPhaseTwo"></app-phase-one>
+<app-phase-one *ngIf="showPhaseThree"></app-phase-one>

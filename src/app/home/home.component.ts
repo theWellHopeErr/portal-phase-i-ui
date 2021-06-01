@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,31 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
-  showPhaseOne = false;
-  showPhaseTwo = false;
-  showPhaseThree = false;
+  constructor(private router: Router, private titleService: Title) {
+    this.titleService.setTitle('Portal Phase I');
+  }
 
   ngOnInit(): void {}
-
-  showPhase(phase: 1 | 2 | 3): void {
-    console.log(phase);
-    switch (phase) {
-      case 1:
-        this.showPhaseOne = false;
-        this.showPhaseTwo = false;
-        this.showPhaseThree = true;
-        break;
-      case 2:
-        this.showPhaseOne = false;
-        this.showPhaseTwo = true;
-        this.showPhaseThree = false;
-        break;
-      case 3:
-        this.showPhaseOne = false;
-        this.showPhaseTwo = false;
-        this.showPhaseThree = true;
-        break;
-    }
+  navigate(path: string): void {
+    this.router.navigate([path]);
   }
 }
