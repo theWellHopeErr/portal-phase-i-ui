@@ -31,7 +31,7 @@ export class MasterDataComponent implements OnInit {
   loading = false;
   cust_id;
   pondOptions: FilePondOptions = {
-    labelIdle: 'Drop files here...',
+    labelIdle: 'Drop file here...',
     acceptedFileTypes: [
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     ],

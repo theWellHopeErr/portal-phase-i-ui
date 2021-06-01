@@ -1,0 +1,11 @@
+.mat-button {
+  margin: 1em 0 0 2em;
+}
+
+mat-card {
+  min-height: 34em;
+  width: fit-content;
+  min-width: 69em;
+  height: fit-content;
+  margin: 1em 2em;
+}

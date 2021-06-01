@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
-
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -24,31 +23,28 @@ export class FincancialSheetComponent implements OnInit {
       title: 'Invoice Details',
       url: '/customer/invoice',
       description:
-        'To request a company to  provide quotation and sales information for presales data collection.',
+        'For Invoice Details along with the line items data collected with IRPA.',
       icon: 'receipt',
       iconColor: '#ff8d56',
     },
     paymentAging: {
       title: 'Payment and Aging',
       url: '/customer/payments-aging',
-      description:
-        'To display the sale orders recorded between the logon customer and the company.',
+      description: 'To display the Payments and Aging Records of the customer.',
       icon: 'featured_play_list',
       iconColor: '#ff567d',
     },
     cd: {
       title: 'Credit/Debit Memo',
       url: '/customer/cd-memo',
-      description:
-        'To view the history of deliveries recorded from the company and the logon customer.',
+      description: 'To view the Credit/Debit Memo of the customer.',
       icon: 'recent_actors',
       iconColor: '#ff5666',
     },
     overall: {
       title: 'Overall Sales',
       url: '/customer/overall-sales',
-      description:
-        'To view the history of deliveries recorded from the company and the logon customer.',
+      description: 'To view various visualizations of the Overall Sales Data.',
       icon: 'analytics',
       iconColor: '#ffd356',
     },

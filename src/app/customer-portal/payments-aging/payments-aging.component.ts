@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+
 import { FiService } from '../services/fi.service';
 
 @Component({
@@ -17,8 +18,7 @@ export class PaymentsAgingComponent implements OnInit {
     private fiService: FiService,
     private route: ActivatedRoute
   ) {
-    this.titleService.setTitle('Payments and Aging | Customer Portal');
-    this.route.params.subscribe((params) => (this.sd = params.sd));
+    this.titleService.setTitle('Payments & Aging | Customer Portal');
   }
 
   tableConfig = {
@@ -35,7 +35,6 @@ export class PaymentsAgingComponent implements OnInit {
   };
   loading = true;
   error = '';
-  sd: string;
 
   ngOnInit(): void {
     this.fiService.getPaymentsAging().subscribe(
@@ -50,7 +49,7 @@ export class PaymentsAgingComponent implements OnInit {
         this.loading = false;
       },
       (_err) => {
-        this.error = `No Payments Records found for this account`;
+        this.error = `No Payment Records found for this account`;
       }
     );
   }
