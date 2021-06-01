@@ -1,14 +1,10 @@
 .mat-toolbar {
-  background-color: #5682ff;
-}
-
-.sidenav-container {
-  height: 100%;
+  background: #5682ff;
 }
 
 .sidenav {
   width: 200px;
-  background-color: #5682ff;
+  background: #5682ff;
 }
 
 .sidenav .mat-toolbar {
@@ -51,4 +47,28 @@
 
 .nav-expansion-panel-icon {
   color: #fff;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 15px 16px;
+}
+
+.fi-nav-list {
+  padding-top: 2em;
+}
+
+.active-nav-item {
+  background: #3965e0;
+}
+
+nav-item {
+  background: #5682ff;
+}
+
+.nav-list-header {
+  font-size: 1.2em;
+}
+
+.mat-sidenav-content {
+  margin-left: 200px;
 }

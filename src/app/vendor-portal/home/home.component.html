@@ -1,3 +1,19 @@
+<div class="mat-sidenav-content">
+  <mat-toolbar color="primary">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <mat-icon class="mr-1">face</mat-icon>
+    <span class="ml-1">Vendor Portal</span>
+  </mat-toolbar>
+</div>
+
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -12,38 +28,77 @@
         class="account-icon m-auto"
         routerLink="/vendor/profile"
         routerLinkActive="router-link-active"
-        >account_circle</mat-icon
+        title="Hi {{ username }}!"
       >
+        account_circle
+      </mat-icon>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Inquiry Data</a>
-      <a mat-list-item href="#">Sales Order Data</a>
-      <a mat-list-item href="#">List of Delivery</a>
-      <mat-expansion-panel
-        class="nav-expansion-panel"
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-        hideToggle
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'dashboard' }"
+        href="/vendor/dashboard"
+        class="nav-list-header"
       >
-        <mat-expansion-panel-header class="nav-expansion-panel-header">
-          <mat-panel-title class="nav-expansion-panel-title">
-            Financial Sheet
-          </mat-panel-title>
-          <mat-icon *ngIf="panelOpenState" class="nav-expansion-panel-icon"
-            >arrow_drop_up</mat-icon
-          >
-          <mat-icon *ngIf="!panelOpenState" class="nav-expansion-panel-icon"
-            >arrow_drop_down</mat-icon
-          >
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">Invoice Details</a>
-          <a mat-list-item href="#">Payments and Aging</a>
-          <a mat-list-item href="#">Credit/Demo Memo</a>
-          <a mat-list-item href="#">Overall Sales Data</a>
-        </mat-nav-list>
-      </mat-expansion-panel>
+        <u>Dashboard</u>
+      </a>
+
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'inquiry' }"
+        href="/vendor/quotation"
+      >
+        Quotation Request
+      </a>
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'sales-order' }"
+        href="/vendor/purchase-order"
+      >
+        Purchase Order
+      </a>
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'lod' }"
+        href="/vendor/receipt"
+      >
+        Goods Receipt
+      </a>
     </mat-nav-list>
+
+    <mat-nav-list class="fi-nav-list">
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'fincancial-sheet' }"
+        class="nav-list-header"
+        href="/vendor/fincancial-sheet"
+      >
+        <u>Fincancial Sheet</u>
+      </a>
+
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'invoice' }"
+        href="/vendor/invoice"
+      >
+        Invoice Details
+      </a>
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'payments-aging' }"
+        href="/vendor/payments-aging"
+      >
+        Payments & Aging
+      </a>
+      <a
+        mat-list-item
+        [ngClass]="{ 'active-nav-item': routerLink === 'cd-memo' }"
+        href="/vendor/cd-memo"
+      >
+        Credit/Demo Memo
+      </a>
+    </mat-nav-list>
+
     <mat-nav-list class="logout-nav-list">
       <a mat-list-item (click)="logout()"
         ><mat-icon class="mr-1">logout</mat-icon>Logout</a
@@ -51,19 +106,6 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <mat-icon class="mr-1">shopping_cart</mat-icon>
-      <span class="ml-1">Vendor Portal</span>
-    </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
