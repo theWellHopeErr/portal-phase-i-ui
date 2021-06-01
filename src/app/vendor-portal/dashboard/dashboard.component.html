@@ -9,22 +9,23 @@
         <mat-card-header>
           <mat-card-title>
             {{ card.title }}
-            <button
-              mat-icon-button
-              class="more-button"
-              [matMenuTriggerFor]="menu"
-              aria-label="Toggle menu"
-            >
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div>
+            <mat-icon
+              [routerLink]="[card.url]"
+              routerLinkActive="router-link-active"
+              [ngStyle]="{ color: card.iconColor }"
+              >{{ card.icon }}</mat-icon
+            >
+          </div>
+          <div class="card-desc">
+            <span>{{ card.description }}</span>
+          </div>
+          <a href="{{ card.url }}" class="my-1 card-link"
+            >Go to {{ card.title }}</a
+          >
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
