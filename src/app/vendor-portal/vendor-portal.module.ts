@@ -23,7 +23,7 @@ import { VendorPortalRoutingModule } from './vendor-portal-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { FincancialSheetComponent } from './fincancial-sheet/fincancial-sheet.component';
+import { FinancialSheetComponent } from './financial-sheet/financial-sheet.component';
 import { PaymentsAgingComponent } from './payments-aging/payments-aging.component';
 import { CdMemoComponent } from './cd-memo/cd-memo.component';
 import { ReceiptComponent } from './receipt/receipt.component';
@@ -37,7 +37,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
     DashboardComponent,
     HomeComponent,
     ProfileComponent,
-    FincancialSheetComponent,
+    FinancialSheetComponent,
     PaymentsAgingComponent,
     CdMemoComponent,
     ReceiptComponent,

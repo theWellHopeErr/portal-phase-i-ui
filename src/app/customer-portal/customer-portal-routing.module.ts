@@ -8,7 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { SalesOrderComponent } from './sales-order/sales-order.component';
 import { LodComponent } from './lod/lod.component';
-import { FincancialSheetComponent } from './fincancial-sheet/fincancial-sheet.component';
+import { FinancialSheetComponent } from './financial-sheet/financial-sheet.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PaymentsAgingComponent } from './payments-aging/payments-aging.component';
 import { CdMemoComponent } from './cd-memo/cd-memo.component';
@@ -58,8 +58,8 @@ const routes: Routes = [
       },
 
       {
-        path: 'fincancial-sheet',
-        component: FincancialSheetComponent,
+        path: 'financial-sheet',
+        component: FinancialSheetComponent,
       },
       {
         path: 'invoice',
