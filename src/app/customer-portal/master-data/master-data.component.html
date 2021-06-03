@@ -5,39 +5,21 @@
 <mat-card>
   <mat-card-title>Master Data Upload</mat-card-title>
   <mat-card-content>
-    <span
-      >Sample Data: <a href="../../../assets/format.xlsx">format.xlsx</a></span
-    >
+    <span>
+      Sample Data: <a href="../../../assets/template.xlsx"> template.xlsx </a>
+    </span>
     <div>
       <file-pond
         #myPond
         [options]="pondOptions"
         [files]="pondFiles"
-        (oninit)="pondHandleInit()"
         (onaddfile)="pondHandleAddFile($event)"
         (onremovefile)="pondHandleRemoveFile($event)"
-        (onactivatefile)="pondHandleActivateFile($event)"
       >
       </file-pond>
     </div>
 
     <div *ngIf="file" class="content-wrapper">
-      <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Key</th>
-              <th scope="col">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of jsonDataArray">
-              <td>{{ item.key }}</td>
-              <td>{{ item.value }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <div>
         <button mat-raised-button [disabled]="loading" (click)="createData()">
           <span
@@ -47,12 +29,20 @@
           Create Record
         </button>
       </div>
+
+      <div>
+        <app-table [tableConfig]="tableConfig"></app-table>
+      </div>
     </div>
 
-    <div *ngIf="cust_id && !file" class="cust-wrapper">
-      <h5>
-        Customer <b class="mx-1">{{ cust_id }}</b> has been created!
+    <div *ngIf="result && result.length > 0" class="result-wrapper">
+      <h5 *ngIf="result.length == 1">
+        Customer <b class="mx-1">{{ result[0].cust_id }}</b> has been created!
       </h5>
+      <div *ngIf="result.length > 1" style="width: 100%">
+        <h5>Customer Records that were created</h5>
+        <app-table [tableConfig]="resultTableConfig"></app-table>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>

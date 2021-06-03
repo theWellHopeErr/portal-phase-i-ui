@@ -6,6 +6,7 @@ import { FilePondOptions, FilePond } from 'filepond';
 
 import { SnackService } from 'src/app/shared/snack.service';
 import { ProfileService } from '../services/profile.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-master-data',
@@ -27,30 +28,56 @@ export class MasterDataComponent implements OnInit {
 
   file;
   jsonData;
-  jsonDataArray = [];
   loading = false;
-  cust_id;
+  pondFiles: FilePondOptions['files'] = [];
+  result = [];
   pondOptions: FilePondOptions = {
     labelIdle: 'Drop file here...',
     acceptedFileTypes: [
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     ],
   };
-  pondFiles: FilePondOptions['files'] = [];
-
-  pondHandleInit() {
-    console.log('FilePond has initialised', this.myPond);
-  }
+  tableConfig = {
+    columns: [
+      { name: 'FIRST_NAME', title: 'FIRST_NAME', pipe: 'default' },
+      { name: 'LAST_NAME', title: 'LAST_NAME', pipe: 'default' },
+      { name: 'TELEPHONE', title: 'TELEPHONE', pipe: 'default' },
+      { name: 'STREET', title: 'STREET', pipe: 'default' },
+      { name: 'POSTAL_CODE', title: 'POSTAL_CODE', pipe: 'default' },
+      { name: 'CITY', title: 'CITY', pipe: 'default' },
+      { name: 'COUNTRY', title: 'COUNTRY', pipe: 'default' },
+      { name: 'LANGUAGE', title: 'LANGUAGE', pipe: 'default' },
+      { name: 'CURRENCY', title: 'CURRENCY', pipe: 'default' },
+      { name: 'REGION', title: 'REGION', pipe: 'default' },
+      {
+        name: 'SALES_ORGANIZATION',
+        title: 'SALES_ORGANIZATION',
+        pipe: 'default',
+      },
+      {
+        name: 'DISTRIBUTION_CHANNEL',
+        title: 'DISTRIBUTION_CHANNEL',
+        pipe: 'default',
+      },
+      { name: 'DIVISION', title: 'DIVISION', pipe: 'default' },
+      { name: 'REFERENCE_NO', title: 'REFERENCE_NO', pipe: 'default' },
+    ],
+  };
+  resultTableConfig = {
+    columns: [
+      { name: 'cust_id', title: 'Customer ID', pipe: 'default' },
+      { name: 'firstname', title: 'First Name', pipe: 'default' },
+      { name: 'lastname', title: 'Last Name', pipe: 'default' },
+    ],
+  };
 
   pondHandleRemoveFile(event: any) {
     this.jsonData = null;
-    this.jsonDataArray = [];
     this.file = null;
-    this.cust_id = null;
+    this.result = [];
   }
 
   pondHandleAddFile(event: any) {
-    console.log('A file was added', event);
     let workBook = null;
     const reader = new FileReader();
     this.file = event.file.file;
@@ -62,55 +89,54 @@ export class MasterDataComponent implements OnInit {
         initial[name] = XLSX.utils.sheet_to_json(sheet);
         return initial;
       }, {});
-
-      Object.keys(this.jsonData.Sheet1[0]).map((o) => {
-        this.jsonDataArray.push({
-          key: o.replace('_', ' '),
-          value: this.jsonData.Sheet1[0][o],
-        });
-      });
+      this.tableConfig['dataSource'] = new MatTableDataSource(
+        this.jsonData.Sheet1
+      );
     };
     reader.readAsBinaryString(this.file);
   }
 
-  pondHandleActivateFile(event: any) {
-    console.log('A file was activated', event);
-  }
-
   createData() {
     this.loading = true;
-    const masterData = {
-      firstname: this.jsonData.Sheet1[0].FIRST_NAME,
-      lastname: this.jsonData.Sheet1[0].LAST_NAME,
-      tel: this.jsonData.Sheet1[0].TELEPHONE,
-      street: this.jsonData.Sheet1[0].STREET,
-      pcode: this.jsonData.Sheet1[0].POSTAL_CODE,
-      city: this.jsonData.Sheet1[0].CITY,
-      country: this.jsonData.Sheet1[0].COUNTRY,
-      language: this.jsonData.Sheet1[0].LANGUAGE,
-      curr: this.jsonData.Sheet1[0].CURRENCY,
-      region: this.jsonData.Sheet1[0].REGION,
-      sorg: this.jsonData.Sheet1[0].SALES_ORGANIZATION,
-      distChannel: this.jsonData.Sheet1[0].DISTRIBUTION_CHANNEL,
-      div: this.jsonData.Sheet1[0].DIVISION,
-      ref: this.jsonData.Sheet1[0].REFERENCE_NO,
-    };
-    this.profileService.createData(masterData).subscribe(
-      (res) => {
-        this.loading = false;
-        this.cust_id = res['cust_id'];
-        this.snackService.openSnackBar('Record Created!!');
-        this.jsonData = null;
-        this.jsonDataArray = [];
-        this.pondFiles = [];
-        this.file = null;
-      },
-      (err) => {
-        this.loading = false;
-        console.error(err);
-        this.snackService.openSnackBar(err.err.message);
-      }
-    );
+    this.jsonData.Sheet1.map((row) => {
+      const masterData = {
+        firstname: row.FIRST_NAME,
+        lastname: row.LAST_NAME,
+        tel: row.TELEPHONE,
+        street: row.STREET,
+        pcode: row.POSTAL_CODE,
+        city: row.CITY,
+        country: row.COUNTRY,
+        language: row.LANGUAGE,
+        curr: row.CURRENCY,
+        region: row.REGION,
+        sorg: row.SALES_ORGANIZATION,
+        distChannel: row.DISTRIBUTION_CHANNEL,
+        div: row.DIVISION,
+        ref: row.REFERENCE_NO,
+      };
+      this.profileService.createData(masterData).subscribe(
+        (res: any) => {
+          this.loading = false;
+          this.result.push({
+            firstname: masterData.firstname,
+            lastname: masterData.lastname,
+            cust_id: res.cust_id,
+          });
+          this.resultTableConfig['dataSource'] = new MatTableDataSource(
+            this.result
+          );
+          this.jsonData = null;
+          this.pondFiles = [];
+          this.file = null;
+        },
+        (err) => {
+          this.loading = false;
+          console.error(err);
+          this.snackService.openSnackBar(err.err.message);
+        }
+      );
+    });
   }
 
   goBack(): void {
