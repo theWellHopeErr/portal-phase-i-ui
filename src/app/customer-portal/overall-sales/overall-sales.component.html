@@ -4,5 +4,100 @@
 
 <mat-card>
   <mat-card-title>Overall Sales Data</mat-card-title>
-  <mat-card-content> </mat-card-content>
+  <mat-card-content>
+    <div class="loading-wrapper" *ngIf="loading">
+      <img class="loading-gif" src="../../../assets/img/loading.gif" />
+    </div>
+    <div class="content-wrapper" *ngIf="!loading">
+      <div class="table-wrapper">
+        <h5>
+          Dataset used for Analysis -
+          <a href="../../../assets/dataset.csv">dataset.csv</a>
+        </h5>
+        <app-table [tableConfig]="tableConfig"></app-table>
+      </div>
+
+      <div class="colab-link">
+        <h5>Model Code in Google Colab</h5>
+        <h6>Language: <b>Python</b></h6>
+        <div class="link-wrapper">
+          <p>
+            <a
+              href="https://colab.research.google.com/drive/1T1iJe-dwF5ZXs2uyusvwIOfggqKmmrUV"
+              target="_blank"
+              noopener
+            >
+              <img
+                src="https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667"
+                alt="Open In Colab"
+                width="200"
+                data-canonical-src="https://colab.research.google.com/assets/colab-badge.svg"
+              />
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="visualization-wrapper">
+        <h5>Data Visualization</h5>
+        <img src="../../../assets/img/plot1.png" alt="age" width="1000" />
+        <h6>Graph with Age at x-axis</h6>
+        <img src="../../../assets/img/plot2.png" alt="gender" width="1000" />
+        <h6>Graph with Gender at x-axis</h6>
+        <img src="../../../assets/img/plot3.png" alt="income" width="1000" />
+        <h6>Graph with Income (x $1000)at x-axis</h6>
+      </div>
+
+      <div class="accuracy-summary">
+        <h5>Accuracy Scores</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Algorithm</th>
+              <th>Accuracy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">1</td>
+              <td>Linear Regression</td>
+              <td>97.5</td>
+            </tr>
+            <tr>
+              <td scope="row">2</td>
+              <td>Logistic Regression</td>
+              <td>97.33334</td>
+            </tr>
+            <tr>
+              <td scope="row">3</td>
+              <td>Random Forest Classification</td>
+              <td>97.5</td>
+            </tr>
+            <tr>
+              <td scope="row">4</td>
+              <td>Decision Tree</td>
+              <td>95</td>
+            </tr>
+            <tr>
+              <td scope="row">5</td>
+              <td>Support Vector Machine</td>
+              <td>90</td>
+            </tr>
+          </tbody>
+        </table>
+        <h5>Conclusion</h5>
+        <p>
+          The results of the accuracy-test have concluded that the accuracy is
+          approximately 97% with slight variations based on the algorithm used.
+        </p>
+        <p>
+          The dataset provided above was used in these models, which has 200
+          records of customer data. This dataset was split into two datasets:
+          one with 160 records for training and the other with 40 records for
+          testing.
+        </p>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>

@@ -20,6 +20,8 @@ export class TablePipe implements PipeTransform {
         return value ? this.upperCasePipe.transform(value) : '-';
       case 'currency':
         return value ? this.decimalPipe.transform(value, '1.2-2') : '-';
+      case 'k_usd':
+        return value ? `$ ${value},000` : '-';
       default:
         return value;
     }
