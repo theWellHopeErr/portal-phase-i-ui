@@ -32,9 +32,10 @@ export class AuthInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((error) => {
-        this.snackService.openSnackBar(
-          `Error ${error.status}: ${error.error.message}`
-        );
+        // this.snackService.openSnackBar(
+        //   `Error ${error.status}: ${error.error.message}`
+        // );
+        console.error(`Error ${error.status}: ${error.error.message}`);
         return throwError(error.message);
       })
     );

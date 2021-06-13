@@ -24,9 +24,9 @@ export class LodComponent implements OnInit {
     columns: [
       { name: 'VBELN', title: 'Sales Document', pipe: 'number' },
       { name: 'AUDAT', title: 'Document Date', pipe: 'date' },
-      { name: 'BSTNK', title: 'PO Number', pipe: 'string' },
       { name: 'VBTYP', title: 'Document Category', pipe: 'string' },
       { name: 'NETWR', title: 'Net Value', pipe: 'currency' },
+      { name: 'BSTNK', title: 'PO Number', pipe: 'string' },
       { name: 'WAERK', title: 'Currency', pipe: 'string' },
       { name: 'VKORG', title: 'Sales Orgnization', pipe: 'string' },
       { name: 'KUNNR', title: 'Sold To Party', pipe: 'string' },

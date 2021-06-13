@@ -24,16 +24,17 @@ export class LodDetailsComponent implements OnInit {
 
   tableConfig = {
     columns: [
-      { name: 'DOC_NUMBER', title: 'DOC_NUMBER', pipe: 'number' },
-      { name: 'ITM_NUMBER', title: 'ITM_NUMBER', pipe: 'number' },
-      { name: 'SHORT_TEXT', title: 'SHORT_TEXT', pipe: 'string' },
-      { name: 'TARGET_QU', title: 'TARGET_QU', pipe: 'string' },
-      { name: 'DIVISION', title: 'DIVISION', pipe: 'string' },
-      { name: 'CURRENCY', title: 'CURRENCY', pipe: 'string' },
-      { name: 'UNIT_OF_WT', title: 'UNIT_OF_WT', pipe: 'string' },
-      { name: 'PLANT', title: 'PLANT', pipe: 'string' },
-      { name: 'CREAT_DATE', title: 'CREAT_DATE', pipe: 'date' },
-      { name: 'NET_PRICE', title: 'NET_PRICE', pipe: 'uppercase' },
+      { name: 'VBELN', title: 'Sales Document No.', pipe: 'number' },
+      { name: 'MATNR', title: 'Material No.', pipe: 'number' },
+      { name: 'LGORT', title: 'Storage Location', pipe: 'string' },
+      { name: 'WERKS', title: 'Plant', pipe: 'uppercase' },
+      { name: 'ERNAM', title: 'Created By', pipe: 'string' },
+      { name: 'ERDAT', title: 'Created On', pipe: 'date' },
+      { name: 'ERZET', title: 'Entry Time', pipe: 'string' },
+      { name: 'MATWA', title: 'Material Entered On', pipe: 'date' },
+      { name: 'MEINS', title: 'Unit', pipe: 'uppercase' },
+      { name: 'POSNR', title: 'Delivery item', pipe: 'number' },
+      { name: 'PSTYV', title: 'Item Category', pipe: 'uppercase' },
     ],
   };
   loading = true;
@@ -43,7 +44,8 @@ export class LodDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.sdService.getDeliveryDetails(this.sd).subscribe(
       (res: any) => {
-        this.tableConfig['dataSource'] = new MatTableDataSource([res.item]);
+        console.log(res.items);
+        this.tableConfig['dataSource'] = new MatTableDataSource(res.items);
         this.loading = false;
       },
       (_err) => {
