@@ -12,6 +12,9 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { QuotationComponent } from './quotation/quotation.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { QuotationDetailsComponent } from './quotation-details/quotation-details.component';
+import { PurchaseOrderDetailsComponent } from './purchase-order-details/purchase-order-details.component';
+import { ReceiptDetailsComponent } from './receipt-details/receipt-details.component';
 
 const routes: Routes = [
   {
@@ -32,12 +35,24 @@ const routes: Routes = [
         component: QuotationComponent,
       },
       {
+        path: 'quotation-details/:pd',
+        component: QuotationDetailsComponent,
+      },
+      {
         path: 'purchase-order',
         component: PurchaseOrderComponent,
       },
       {
+        path: 'po-details/:pd',
+        component: PurchaseOrderDetailsComponent,
+      },
+      {
         path: 'receipt',
         component: ReceiptComponent,
+      },
+      {
+        path: 'receipt-details',
+        component: ReceiptDetailsComponent,
       },
 
       {

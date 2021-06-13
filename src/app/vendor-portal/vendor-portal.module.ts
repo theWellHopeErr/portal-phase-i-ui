@@ -30,6 +30,9 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { QuotationComponent } from './quotation/quotation.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { QuotationDetailsComponent } from './quotation-details/quotation-details.component';
+import { PurchaseOrderDetailsComponent } from './purchase-order-details/purchase-order-details.component';
+import { ReceiptDetailsComponent } from './receipt-details/receipt-details.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { InvoiceComponent } from './invoice/invoice.component';
     PurchaseOrderComponent,
     QuotationComponent,
     InvoiceComponent,
+    QuotationDetailsComponent,
+    PurchaseOrderDetailsComponent,
+    ReceiptDetailsComponent,
   ],
   imports: [
     CommonModule,
