@@ -18,4 +18,14 @@ export class FiService {
   getPaymentsAging() {
     return this.http.get(`api/vendor/pa`);
   }
+
+  getInvoicList() {
+    return this.http.get(`api/vendor/invoice`);
+  }
+
+  getInvoicePDF(invoice_no: string, fiscal_year: string) {
+    return this.http.get(
+      `api/vendor/invoice-pdf?inv_no=${invoice_no}&year=${fiscal_year}`
+    );
+  }
 }
