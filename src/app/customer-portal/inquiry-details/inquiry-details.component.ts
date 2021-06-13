@@ -15,7 +15,6 @@ export class InquiryDetailsComponent implements OnInit {
     private titleService: Title,
     private location: Location,
     private sdService: SdService,
-    private router: Router,
     private route: ActivatedRoute
   ) {
     this.titleService.setTitle(`Inquiry Details | Customer Portal`);
@@ -24,16 +23,16 @@ export class InquiryDetailsComponent implements OnInit {
 
   tableConfig = {
     columns: [
-      { name: 'DOC_NUMBER', title: 'DOC_NUMBER', pipe: 'number' },
-      { name: 'ITM_NUMBER', title: 'ITM_NUMBER', pipe: 'number' },
-      { name: 'SHORT_TEXT', title: 'SHORT_TEXT', pipe: 'string' },
-      { name: 'TARGET_QU', title: 'TARGET_QU', pipe: 'string' },
-      { name: 'DIVISION', title: 'DIVISION', pipe: 'string' },
-      { name: 'CURRENCY', title: 'CURRENCY', pipe: 'string' },
-      { name: 'UNIT_OF_WT', title: 'UNIT_OF_WT', pipe: 'string' },
-      { name: 'PLANT', title: 'PLANT', pipe: 'string' },
-      { name: 'CREAT_DATE', title: 'CREAT_DATE', pipe: 'date' },
-      { name: 'NET_PRICE', title: 'NET_PRICE', pipe: 'uppercase' },
+      { name: 'DOC_NUMBER', title: 'Sales Document No', pipe: 'number' },
+      { name: 'ITM_NUMBER', title: 'Item No.', pipe: 'number' },
+      { name: 'SHORT_TEXT', title: 'Short Text', pipe: 'string' },
+      { name: 'TARGET_QU', title: 'Target Quantity', pipe: 'string' },
+      { name: 'DIVISION', title: 'Division', pipe: 'string' },
+      { name: 'CURRENCY', title: 'Currency', pipe: 'string' },
+      { name: 'UNIT_OF_WT', title: 'Unit', pipe: 'string' },
+      { name: 'PLANT', title: 'Plant', pipe: 'string' },
+      { name: 'CREAT_DATE', title: 'Created On', pipe: 'date' },
+      { name: 'NET_PRICE', title: 'Net Price', pipe: 'currency' },
     ],
   };
   loading = true;

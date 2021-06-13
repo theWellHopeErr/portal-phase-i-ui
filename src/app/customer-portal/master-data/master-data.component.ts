@@ -39,28 +39,28 @@ export class MasterDataComponent implements OnInit {
   };
   tableConfig = {
     columns: [
-      { name: 'FIRST_NAME', title: 'FIRST_NAME', pipe: 'default' },
-      { name: 'LAST_NAME', title: 'LAST_NAME', pipe: 'default' },
-      { name: 'TELEPHONE', title: 'TELEPHONE', pipe: 'default' },
-      { name: 'STREET', title: 'STREET', pipe: 'default' },
-      { name: 'POSTAL_CODE', title: 'POSTAL_CODE', pipe: 'default' },
-      { name: 'CITY', title: 'CITY', pipe: 'default' },
-      { name: 'COUNTRY', title: 'COUNTRY', pipe: 'default' },
-      { name: 'LANGUAGE', title: 'LANGUAGE', pipe: 'default' },
-      { name: 'CURRENCY', title: 'CURRENCY', pipe: 'default' },
-      { name: 'REGION', title: 'REGION', pipe: 'default' },
+      { name: 'FIRST_NAME', title: 'First Name', pipe: 'default' },
+      { name: 'LAST_NAME', title: 'Last Name', pipe: 'default' },
+      { name: 'TELEPHONE', title: 'Telephone', pipe: 'default' },
+      { name: 'STREET', title: 'Street', pipe: 'default' },
+      { name: 'POSTAL_CODE', title: 'Postal Code', pipe: 'default' },
+      { name: 'CITY', title: 'City', pipe: 'default' },
+      { name: 'COUNTRY', title: 'Country', pipe: 'default' },
+      { name: 'LANGUAGE', title: 'Language', pipe: 'default' },
+      { name: 'CURRENCY', title: 'Currency', pipe: 'default' },
+      { name: 'REGION', title: 'Region', pipe: 'default' },
       {
         name: 'SALES_ORGANIZATION',
-        title: 'SALES_ORGANIZATION',
+        title: 'Sales Organization',
         pipe: 'default',
       },
       {
         name: 'DISTRIBUTION_CHANNEL',
-        title: 'DISTRIBUTION_CHANNEL',
+        title: 'Distribution Channel',
         pipe: 'default',
       },
-      { name: 'DIVISION', title: 'DIVISION', pipe: 'default' },
-      { name: 'REFERENCE_NO', title: 'REFERENCE_NO', pipe: 'default' },
+      { name: 'DIVISION', title: 'Division', pipe: 'default' },
+      { name: 'REFERENCE_NO', title: 'Reference No.', pipe: 'default' },
     ],
   };
   resultTableConfig = {
