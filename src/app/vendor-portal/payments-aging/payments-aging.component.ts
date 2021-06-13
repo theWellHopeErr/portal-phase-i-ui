@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { FiService } from '../services/fi.service';
 
@@ -15,8 +14,7 @@ export class PaymentsAgingComponent implements OnInit {
   constructor(
     private titleService: Title,
     private location: Location,
-    private fiService: FiService,
-    private route: ActivatedRoute
+    private fiService: FiService
   ) {
     this.titleService.setTitle('Payments & Aging | Vendor Portal');
   }

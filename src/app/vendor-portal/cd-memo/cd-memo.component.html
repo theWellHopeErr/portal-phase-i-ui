@@ -8,10 +8,7 @@
       <mat-tab label="Credit Memo">
         <div *ngIf="error" class="error-msg">{{ error }}</div>
         <div class="loading-wrapper" *ngIf="loading && !error">
-          <img
-            class="loading-gif"
-            src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
-          />
+          <img class="loading-gif" src="../../../assets/img/loading.gif" />
         </div>
         <app-table *ngIf="!loading && !error" [tableConfig]="creditTableConfig">
         </app-table>
@@ -20,10 +17,7 @@
       <mat-tab label="Debit Memo">
         <div *ngIf="error" class="error-msg">{{ error }}</div>
         <div class="loading-wrapper" *ngIf="loading && !error">
-          <img
-            class="loading-gif"
-            src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif"
-          />
+          <img class="loading-gif" src="../../../assets/img/loading.gif" />
         </div>
         <app-table *ngIf="!loading && !error" [tableConfig]="debitTableConfig">
         </app-table>
