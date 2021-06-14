@@ -19,7 +19,7 @@ export class FiService {
     return this.http.get(`api/vendor/pa`);
   }
 
-  getInvoicList() {
+  getInvoiceList() {
     return this.http.get(`api/vendor/invoice`);
   }
 

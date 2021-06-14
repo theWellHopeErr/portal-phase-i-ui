@@ -3,16 +3,14 @@
 </button>
 
 <mat-card>
-  <mat-card-title>Invoice List</mat-card-title>
+  <mat-card-title>
+    Invocie Number {{ inv }} of Fiscal Year {{ fisc }}</mat-card-title
+  >
   <mat-card-content>
     <div *ngIf="error" class="error-msg">{{ error }}</div>
     <div class="loading-wrapper" *ngIf="loading && !error">
       <img class="loading-gif" src="../../../assets/img/loading.gif" />
     </div>
-    <app-table
-      *ngIf="!loading && !error"
-      [tableConfig]="tableConfig"
-      [onClicker]="onClicker"
-    ></app-table>
+    <embed [src]="pdfurl" width="900px" height="1150px" />
   </mat-card-content>
 </mat-card>

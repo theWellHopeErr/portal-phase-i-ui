@@ -33,6 +33,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { QuotationDetailsComponent } from './quotation-details/quotation-details.component';
 import { PurchaseOrderDetailsComponent } from './purchase-order-details/purchase-order-details.component';
 import { ReceiptDetailsComponent } from './receipt-details/receipt-details.component';
+import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ReceiptDetailsComponent } from './receipt-details/receipt-details.compo
     QuotationDetailsComponent,
     PurchaseOrderDetailsComponent,
     ReceiptDetailsComponent,
+    InvoicePdfComponent,
   ],
   imports: [
     CommonModule,

@@ -15,6 +15,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { QuotationDetailsComponent } from './quotation-details/quotation-details.component';
 import { PurchaseOrderDetailsComponent } from './purchase-order-details/purchase-order-details.component';
 import { ReceiptDetailsComponent } from './receipt-details/receipt-details.component';
+import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
 
 const routes: Routes = [
   {
@@ -51,7 +52,7 @@ const routes: Routes = [
         component: ReceiptComponent,
       },
       {
-        path: 'receipt-details',
+        path: 'receipt-details/:md/:my',
         component: ReceiptDetailsComponent,
       },
 
@@ -62,6 +63,10 @@ const routes: Routes = [
       {
         path: 'invoice',
         component: InvoiceComponent,
+      },
+      {
+        path: 'invoice-pdf/:inv/:fisc',
+        component: InvoicePdfComponent,
       },
       {
         path: 'payments-aging',
