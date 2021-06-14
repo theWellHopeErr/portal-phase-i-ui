@@ -25,7 +25,7 @@ export class PurchaseOrderDetailsComponent implements OnInit {
     columns: [
       { name: 'PO_ITEM', title: 'Item Number', pipe: 'number' },
       { name: 'CHANGED_ON', title: 'Changed On', pipe: 'date' },
-      { name: 'SHORT_TEXT', title: 'Short Text', pipe: 'string' },
+      { name: 'SHORT_TEXT', title: 'Description', pipe: 'string' },
       { name: 'NET_PRICE', title: 'Net price', pipe: 'currency' },
       { name: 'CO_CODE', title: 'Company Code', pipe: 'string' },
       { name: 'PLANT', title: 'Plant', pipe: 'uppercase' },

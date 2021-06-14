@@ -54,14 +54,14 @@ export class PaymentsAgingComponent implements OnInit {
 
   diff(d1: number, d2: number): string {
     const diffTime = Math.abs(d2 - d1);
-    const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    const months = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
-    const years = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 365));
+    const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    const months = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30 + 1));
+    const years = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
     let diff = '';
     if (years) diff += `${years} ${years == 1 ? 'Year' : 'Years'}, `;
     if (months) diff += `${months} ${months == 1 ? 'Month' : 'Months'}, `;
     if (days) diff += `${days} ${days == 1 ? 'Day' : 'Days'}, `;
-    if (diff === '') diff = '0 days';
+    if (diff === '') diff = '0 Days';
     return diff;
   }
 

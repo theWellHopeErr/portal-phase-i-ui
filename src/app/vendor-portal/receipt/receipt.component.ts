@@ -22,14 +22,13 @@ export class ReceiptComponent implements OnInit {
 
   tableConfig = {
     columns: [
-      { name: 'MBLNR', title: 'Material Document No.', pipe: 'numbera' },
-      { name: 'MATNR', title: 'Material No.', pipe: 'stringa' },
-      { name: 'LGORT', title: 'Location', pipe: 'stringa' },
-      { name: 'MJAHR', title: 'Material Year', pipe: 'stringa' },
-      { name: 'WAERS', title: 'Currency', pipe: 'stringa' },
-      { name: 'WERKS', title: 'Plant', pipe: 'stringa' },
-      { name: 'LINE_ID', title: 'Line ID', pipe: 'stringa' },
-      { name: 'ZEILE', title: 'Rows', pipe: 'stringa' },
+      { name: 'MBLNR', title: 'Material Document No.', pipe: 'number' },
+      { name: 'MJAHR', title: 'Material Year', pipe: 'number' },
+      { name: 'MATNR', title: 'Material No.', pipe: 'uppercase' },
+      { name: 'LGORT', title: 'Location', pipe: 'uppercase' },
+      { name: 'WAERS', title: 'Currency', pipe: 'uppercase' },
+      { name: 'WERKS', title: 'Plant', pipe: 'uppercase' },
+      { name: 'ZEILE', title: 'Rows', pipe: 'number' },
     ],
   };
   loading = true;
@@ -51,11 +50,7 @@ export class ReceiptComponent implements OnInit {
 
   onClicker(key): void {
     this.loading = true;
-    // this.router.navigate([`vendor/receipt-details/${key}/2015`]);
-    this.router.navigate(['vendor/receipt-details'], {
-      queryParams: { md: key, my: 2015 },
-      queryParamsHandling: 'merge',
-    });
+    this.router.navigate([`vendor/receipt-details/${key}/2015`]);
   }
 
   goBack(): void {
