@@ -25,7 +25,7 @@ export class InquiryDetailsComponent implements OnInit {
     columns: [
       { name: 'DOC_NUMBER', title: 'Sales Document No', pipe: 'number' },
       { name: 'ITM_NUMBER', title: 'Item No.', pipe: 'number' },
-      { name: 'SHORT_TEXT', title: 'Short Text', pipe: 'string' },
+      { name: 'SHORT_TEXT', title: 'Description', pipe: 'string' },
       { name: 'TARGET_QU', title: 'Target Quantity', pipe: 'string' },
       { name: 'DIVISION', title: 'Division', pipe: 'string' },
       { name: 'CURRENCY', title: 'Currency', pipe: 'string' },
