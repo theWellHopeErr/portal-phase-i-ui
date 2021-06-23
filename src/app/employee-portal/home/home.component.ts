@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   username: string;
   panelOpenState = false;
+  routerLink = this.router.url.split('/')[2];
 
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;
