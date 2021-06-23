@@ -5,6 +5,10 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from '../shared/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LeaveComponent } from './leave/leave.component';
+import { PaySlipComponent } from './pay-slip/pay-slip.component';
+import { PaySlipDetailsComponent } from './pay-slip-details/pay-slip-details.component';
+import { NoticeComponent } from './notice/notice.component';
 
 const routes: Routes = [
   {
@@ -20,10 +24,22 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
       },
-      // {
-      //   path: 'financial-sheet',
-      //   component: FinancialSheetComponent,
-      // },
+      {
+        path: 'leave',
+        component: LeaveComponent,
+      },
+      {
+        path: 'pay-slip',
+        component: PaySlipComponent,
+      },
+      {
+        path: 'pay-slip/:sn',
+        component: PaySlipDetailsComponent,
+      },
+      {
+        path: 'notice',
+        component: NoticeComponent,
+      },
     ],
   },
 ];
