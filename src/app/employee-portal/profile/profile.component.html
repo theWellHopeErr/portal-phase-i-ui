@@ -1,1 +1,223 @@
-<p>Employee profile works!</p>
+<mat-card>
+  <mat-card-title> Profile Details </mat-card-title>
+  <mat-card-content>
+    <div class="img-wrapper">
+      <img
+        mat-card-image
+        src="https://www.materialui.co/materialIcons/action/account_circle_black_108x108.png"
+      />
+      <img
+        *ngIf="formLoading"
+        class="loading-gif"
+        src="../../../assets/img/loading.gif"
+      />
+      <!-- <mat-grid-list cols="1" rowHeight="5em">
+        <mat-grid-tile>
+          <mat-label>Employee ID:</mat-label>
+          <mat-form-field appearance="legacy">
+            <input
+              matInput
+              type="text"
+              formControlName="eid"
+              color="primary"
+              readonly
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list> -->
+    </div>
+    <mat-accordion *ngIf="!formLoading">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Personal Details </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button
+          *ngIf="!isEditEnabled"
+          mat-stroked-button
+          class="edit-btn"
+          (click)="edit()"
+        >
+          <span class="mr-1"> Edit</span> <mat-icon>edit</mat-icon>
+        </button>
+        <form [formGroup]="profileForm">
+          <mat-grid-list cols="1" class="grid-list-1" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Title:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="title"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>First Name:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="name1"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field> </mat-grid-tile
+            ><mat-grid-tile>
+              <mat-label>Last Name:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="name2"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Street:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="address"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>City:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="city"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em"
+            ><mat-grid-tile>
+              <mat-label>Region:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="region"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Postal Code:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="p_code"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Nationality:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="nationality"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Telephone:</mat-label>
+              <mat-form-field
+                [appearance]="isEditEnabled ? 'outline' : 'legacy'"
+              >
+                <input
+                  matInput
+                  type="text"
+                  formControlName="tel"
+                  color="primary"
+                  [readonly]="!isEditEnabled"
+                />
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </form>
+        <mat-action-row *ngIf="isEditEnabled">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="save()"
+            [disabled]="saveLoading"
+          >
+            <span
+              *ngIf="saveLoading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span
+            >Save
+          </button>
+          <button mat-stroked-button (click)="cancel()">Cancel</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Company Details </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <mat-label>Country</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Private Details </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input matInput readonly />
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+</mat-card>

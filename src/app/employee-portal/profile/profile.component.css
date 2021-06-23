@@ -1,0 +1,52 @@
+mat-card {
+  margin: 1em;
+  padding: 2em;
+}
+
+.mat-stroked-button {
+  color: #ffb456;
+}
+
+.mat-raised-button {
+  background: #ffb456;
+}
+
+.edit-btn {
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50px;
+  float: right;
+  z-index: 1;
+}
+
+.img-wrapper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mat-card-image {
+  width: 10%;
+}
+
+.loading-gif {
+  width: 25%;
+}
+
+mat-card-content {
+  margin-top: 2em;
+}
+
+mat-label {
+  margin-right: 1em;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+::ng-deep .grid-list-3 mat-grid-tile .mat-figure {
+  justify-content: space-between !important;
+  margin: 0 3em !important;
+}
