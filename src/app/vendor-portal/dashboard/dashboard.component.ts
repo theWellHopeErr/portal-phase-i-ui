@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
-
 import { Title } from '@angular/platform-browser';
 
 @Component({

@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/shared/auth.service';
   providedIn: 'root',
 })
 export class ProfileService {
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient) {}
 
   get() {
     return this.http.get(`api/vendor/profile`);

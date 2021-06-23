@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { SnackService } from 'src/app/shared/snack.service';
 
+import { SnackService } from 'src/app/shared/snack.service';
 import { ProfileService } from '../services/profile.service';
 import { Profile } from './profile';
 
