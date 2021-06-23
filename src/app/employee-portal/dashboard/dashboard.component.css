@@ -19,3 +19,19 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+mat-card-content mat-icon {
+  height: 80px;
+  width: 80px;
+  font-size: 10em;
+  transform: translate(-50%, 0%);
+  cursor: pointer;
+}
+
+.card-link {
+  margin-left: -17px;
+}
+
+.card-desc {
+  margin-bottom: 2em;
+}

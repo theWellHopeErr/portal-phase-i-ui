@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { map, shareReplay } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-
-import { AuthService } from '../../shared/auth.service';
+import { map } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -16,26 +13,51 @@ export class DashboardComponent {
     private breakpointObserver: BreakpointObserver,
     private titleService: Title
   ) {
-    this.titleService.setTitle('Customer Portal');
+    this.titleService.setTitle('Employee Portal');
   }
+
+  cardData = {
+    quotation: {
+      title: 'Leave Request',
+      url: '/employee/leave',
+      description:
+        'To view all the leave data, remaining leave quota of the employee and create requests for leave in future.',
+      icon: 'date_range',
+      iconColor: '#ffdb56',
+    },
+    purchaseOrder: {
+      title: 'Pay Slip',
+      url: '/employee/pay-slip',
+      description:
+        'To view all the pay slips for the employee on a monthly basis and to generate a PDF on request for a particular Pay Slip.',
+      icon: 'request_quote',
+      iconColor: '#ffa500',
+    },
+    receipt: {
+      title: 'Notice Period',
+      url: '/employee/notice',
+      description:
+        'To request for notice period when the employee is planning on leaving the company, once the employee is in the notice period they can view their Full & Final Settlement details.',
+      icon: 'receipt_long',
+      iconColor: '#ffa456',
+    },
+  };
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          // { title: 'Card 3', cols: 1, rows: 1 },
-          // { title: 'Card 4', cols: 1, rows: 1 },
+          { ...this.cardData.quotation, cols: 1, rows: 1 },
+          { ...this.cardData.purchaseOrder, cols: 1, rows: 1 },
+          { ...this.cardData.receipt, cols: 1, rows: 1 },
         ];
       }
 
       return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        // { title: 'Card 3', cols: 1, rows: 2 },
-        // { title: 'Card 4', cols: 1, rows: 1 },
+        { ...this.cardData.quotation, cols: 2, rows: 1 },
+        { ...this.cardData.purchaseOrder, cols: 1, rows: 1 },
+        { ...this.cardData.receipt, cols: 1, rows: 1 },
       ];
     })
   );
