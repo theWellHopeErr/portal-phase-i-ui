@@ -24,6 +24,7 @@ mat-card {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 2em;
 }
 
 .mat-card-image {
@@ -46,7 +47,25 @@ mat-card-actions {
   text-align: center;
 }
 
-::ng-deep .grid-list-3 mat-grid-tile .mat-figure {
+.mat-expansion-panel-header-title {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+::ng-deep .personal-details .grid-list-4 mat-grid-tile .mat-figure {
   justify-content: space-between !important;
   margin: 0 3em !important;
+}
+
+::ng-deep .company-details mat-grid-tile .mat-figure {
+  justify-content: flex-end !important;
+}
+
+.employee-id span,
+.company-details span,
+.private-details span {
+  background: #fafafa;
+  padding: 0.6em;
+  border-radius: 10px;
+  width: 150px;
 }

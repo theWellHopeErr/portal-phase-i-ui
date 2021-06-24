@@ -26,6 +26,6 @@ export class HcmService {
     return this.http.put(`api/employee/notice`, { option: 'cancel' });
   }
   getFinalSettlement() {
-    return this.http.get(`api/employee/invoice`);
+    return this.http.get(`api/employee/final-set`);
   }
 }

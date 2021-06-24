@@ -68,6 +68,7 @@ export class MasterDataComponent implements OnInit {
       { name: 'cust_id', title: 'Customer ID', pipe: 'default' },
       { name: 'firstname', title: 'First Name', pipe: 'default' },
       { name: 'lastname', title: 'Last Name', pipe: 'default' },
+      { name: 'status', title: 'Status', pipe: 'default' },
     ],
   };
 
@@ -122,6 +123,7 @@ export class MasterDataComponent implements OnInit {
             firstname: masterData.firstname,
             lastname: masterData.lastname,
             cust_id: res.cust_id,
+            status: res.cust_id ? 'Record Created' : 'Error',
           });
           this.resultTableConfig['dataSource'] = new MatTableDataSource(
             this.result

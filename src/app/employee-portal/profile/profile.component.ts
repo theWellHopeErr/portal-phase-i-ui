@@ -20,8 +20,8 @@ export class ProfileComponent implements OnInit {
   ) {
     this.titleService.setTitle('Profile | Employee Portal');
     this.profileService.get().subscribe((res: Profile) => {
-      console.log(res);
       this.form = res;
+      this.profileData = res;
       this.profileForm = this.formBuilder.group(this.form);
       this.formLoading = false;
       console.log(this.profileForm);
@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
   saveLoading = false;
   formLoading = true;
   panelOpenState = false;
+  profileData;
   form: Profile = {
     eid: '',
     name1: '',

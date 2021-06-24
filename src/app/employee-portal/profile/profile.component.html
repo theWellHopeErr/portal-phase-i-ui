@@ -11,26 +11,17 @@
         class="loading-gif"
         src="../../../assets/img/loading.gif"
       />
-      <!-- <mat-grid-list cols="1" rowHeight="5em">
-        <mat-grid-tile>
-          <mat-label>Employee ID:</mat-label>
-          <mat-form-field appearance="legacy">
-            <input
-              matInput
-              type="text"
-              formControlName="eid"
-              color="primary"
-              readonly
-            />
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list> -->
+      <div *ngIf="!formLoading" class="employee-id">
+        <mat-label>Employee ID:</mat-label>
+        <span>{{ profileData.eid }}</span>
+      </div>
     </div>
     <mat-accordion *ngIf="!formLoading">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title> Personal Details </mat-panel-title>
         </mat-expansion-panel-header>
+
         <button
           *ngIf="!isEditEnabled"
           mat-stroked-button
@@ -39,10 +30,14 @@
         >
           <span class="mr-1"> Edit</span> <mat-icon>edit</mat-icon>
         </button>
-        <form [formGroup]="profileForm">
-          <mat-grid-list cols="1" class="grid-list-1" rowHeight="5em">
+
+        <form [formGroup]="profileForm" class="personal-details">
+          <mat-grid-list cols="4" class="grid-list-4" rowHeight="5em">
+            <mat-grid-tile> </mat-grid-tile>
             <mat-grid-tile>
               <mat-label>Title:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -55,11 +50,14 @@
                 />
               </mat-form-field>
             </mat-grid-tile>
+            <mat-grid-tile> </mat-grid-tile>
           </mat-grid-list>
 
-          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em">
+          <mat-grid-list cols="4" class="grid-list-4" rowHeight="5em">
             <mat-grid-tile>
               <mat-label>First Name:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -70,9 +68,12 @@
                   color="primary"
                   [readonly]="!isEditEnabled"
                 />
-              </mat-form-field> </mat-grid-tile
-            ><mat-grid-tile>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-label>Last Name:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -87,9 +88,11 @@
             </mat-grid-tile>
           </mat-grid-list>
 
-          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em">
+          <mat-grid-list cols="4" class="grid-list-4" rowHeight="5em">
             <mat-grid-tile>
               <mat-label>Street:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -104,6 +107,8 @@
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-label>City:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -118,9 +123,11 @@
             </mat-grid-tile>
           </mat-grid-list>
 
-          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em"
-            ><mat-grid-tile>
+          <mat-grid-list cols="4" class="grid-list-4" rowHeight="5em">
+            <mat-grid-tile>
               <mat-label>Region:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -135,6 +142,8 @@
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-label>Postal Code:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -149,9 +158,11 @@
             </mat-grid-tile>
           </mat-grid-list>
 
-          <mat-grid-list cols="2" class="grid-list-2" rowHeight="5em">
+          <mat-grid-list cols="4" class="grid-list-4" rowHeight="5em">
             <mat-grid-tile>
               <mat-label>Nationality:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -166,6 +177,8 @@
             </mat-grid-tile>
             <mat-grid-tile>
               <mat-label>Telephone:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
               <mat-form-field
                 [appearance]="isEditEnabled ? 'outline' : 'legacy'"
               >
@@ -180,6 +193,7 @@
             </mat-grid-tile>
           </mat-grid-list>
         </form>
+
         <mat-action-row *ngIf="isEditEnabled">
           <button
             mat-raised-button
@@ -190,8 +204,9 @@
             <span
               *ngIf="saveLoading"
               class="spinner-border spinner-border-sm mr-1"
-            ></span
-            >Save
+            >
+            </span>
+            Save
           </button>
           <button mat-stroked-button (click)="cancel()">Cancel</button>
         </mat-action-row>
@@ -202,21 +217,149 @@
           <mat-panel-title> Company Details </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <mat-form-field>
-          <mat-label>Country</mat-label>
-          <input matInput />
-        </mat-form-field>
+        <div class="grid-container company-details">
+          <mat-grid-list cols="6" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Company Code:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.comp_code }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Organization Unit:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile
+              ><span>{{ profileData.org_unit }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Organization Name:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.org_name }}</span>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="6" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Employee Group:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.emp_grp }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Employee Subgroup:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.emp_subgrp }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Cost Center:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.cost_center }}</span>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="6" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Area:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.area }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Contribution Area:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.contr_area }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Occ. Type:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.o_type }}</span>
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="4" rowHeight="5em">
+            <mat-grid-tile>
+              <mat-label>Start Date:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.start_date | date }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Status:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.status }}</span>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
       </mat-expansion-panel>
 
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title> Private Details </mat-panel-title>
         </mat-expansion-panel-header>
+        <div class="grid-container private-details">
+          <mat-grid-list cols="8" rowHeight="5em">
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Role:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.role }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Role Name:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.role_txt }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+          </mat-grid-list>
 
-        <mat-form-field>
-          <mat-label>Date</mat-label>
-          <input matInput readonly />
-        </mat-form-field>
+          <mat-grid-list cols="8" rowHeight="5em">
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Address Key:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.address_key }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile> </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Gender:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.gender }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="8" rowHeight="5em">
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Date of Birth:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ "1994-10-10" | date }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile>
+              <mat-label>Marital Key:</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <span>{{ profileData.marital_key }}</span>
+            </mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+          </mat-grid-list>
+        </div>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-card-content>
