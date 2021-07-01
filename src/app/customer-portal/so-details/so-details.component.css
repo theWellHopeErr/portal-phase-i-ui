@@ -3,9 +3,9 @@
 }
 
 mat-card {
-  min-height: 34em;
+  min-height: 36em;
   width: fit-content;
-  min-width: 69em;
+  min-width: 74rem;
   height: fit-content;
   margin: 1em 2em;
 }

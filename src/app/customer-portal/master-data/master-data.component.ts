@@ -135,7 +135,7 @@ export class MasterDataComponent implements OnInit {
         (err) => {
           this.loading = false;
           console.error(err);
-          this.snackService.openSnackBar(err.err.message);
+          this.snackService.openSnackBar('Error During Creation');
         }
       );
     });

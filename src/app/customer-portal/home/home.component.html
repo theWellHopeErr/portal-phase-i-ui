@@ -45,19 +45,25 @@
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'inquiry' }"
         href="/customer/inquiry"
-        >Inquiry Data</a
       >
+        <mat-icon class="mr-1">receipt_long</mat-icon>
+        Inquiry Data
+      </a>
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'sales-order' }"
         href="/customer/sales-order"
-        >Sales Order Data</a
       >
+        <mat-icon class="mr-1">featured_play_list</mat-icon>
+        Sales Order Data
+      </a>
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'lod' }"
         href="/customer/lod"
-        >List of Delivery</a
+      >
+        <mat-icon class="mr-1">list_alt</mat-icon>
+        List of Delivery</a
       >
     </mat-nav-list>
 
@@ -74,25 +80,33 @@
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'invoice' }"
         href="/customer/invoice"
-        >Invoice Details</a
       >
+        <mat-icon class="mr-1">receipt</mat-icon>
+        Invoice Details
+      </a>
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'payments-aging' }"
         href="/customer/payments-aging"
-        >Payments & Aging</a
       >
+        <mat-icon class="mr-1">featured_play_list</mat-icon>
+        Payments & Aging
+      </a>
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'cd-memo' }"
         href="/customer/cd-memo"
-        >Credit/Debit Memo</a
       >
+        <mat-icon class="mr-1">recent_actors</mat-icon>
+        Credit/Debit Memo
+      </a>
       <a
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'overall-sales' }"
         href="/customer/overall-sales"
-        >Overall Sales
+      >
+        <mat-icon class="mr-1">analytics</mat-icon>
+        Overall Sales
       </a>
     </mat-nav-list>
 
@@ -101,14 +115,16 @@
         mat-list-item
         [ngClass]="{ 'active-nav-item': routerLink === 'master-data' }"
         href="/customer/master-data"
-        >Master Data Upload
+      >
+        Master Data Upload
       </a>
     </mat-nav-list>
 
     <mat-nav-list class="logout-nav-list">
-      <a mat-list-item (click)="logout()"
-        ><mat-icon class="mr-1">logout</mat-icon>Logout</a
-      >
+      <a mat-list-item (click)="logout()">
+        <mat-icon class="mr-1">logout</mat-icon>
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
