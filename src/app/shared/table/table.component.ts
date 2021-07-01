@@ -2,6 +2,9 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SnackService } from '../snack.service';
+import { LeaveTypesDialog } from 'src/app/employee-portal/leave-request/leave-request.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table',
@@ -17,7 +20,12 @@ export class TableComponent implements OnInit {
   displayedColumns: any[];
   isClickable: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    public snackService: SnackService,
+    public dialogRef: MatDialogRef<LeaveTypesDialog>
+  ) {}
 
   ngOnInit(): void {}
 

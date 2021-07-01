@@ -27,10 +27,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;
-    if (currentUser) {
-      this.username = currentUser.username;
-    }
+    if (currentUser) this.username = currentUser.username;
   }
+
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(

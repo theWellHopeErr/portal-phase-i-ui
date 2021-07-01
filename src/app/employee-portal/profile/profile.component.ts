@@ -24,7 +24,6 @@ export class ProfileComponent implements OnInit {
       this.profileData = res;
       this.profileForm = this.formBuilder.group(this.form);
       this.formLoading = false;
-      console.log(this.profileForm);
     });
   }
 
@@ -52,7 +51,6 @@ export class ProfileComponent implements OnInit {
   }
 
   edit(): void {
-    console.log(this.isEditEnabled);
     this.isEditEnabled = true;
   }
 

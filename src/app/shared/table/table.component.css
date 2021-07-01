@@ -20,5 +20,5 @@ th.mat-header-cell {
 
 ::ng-deep .mat-sort-header-container {
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.8rem !important;
 }
