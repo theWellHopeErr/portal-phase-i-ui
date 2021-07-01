@@ -9,6 +9,7 @@ import { LeaveComponent } from './leave/leave.component';
 import { PaySlipComponent } from './pay-slip/pay-slip.component';
 import { PaySlipDetailsComponent } from './pay-slip-details/pay-slip-details.component';
 import { NoticeComponent } from './notice/notice.component';
+import { LeaveRequestComponent } from './leave-request/leave-request.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'leave',
         component: LeaveComponent,
+      },
+      {
+        path: 'leave-request',
+        component: LeaveRequestComponent,
       },
       {
         path: 'pay-slip',

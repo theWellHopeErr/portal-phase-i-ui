@@ -1,10 +1,12 @@
 <h4 mat-dialog-title>
   <mat-toolbar role="toolbar" class="task-header">
-    <span>Full & Final Settlement</span>
+    <span>Leave Types</span>
     <span class="fx-spacer"></span>
     <button mat-icon-button (click)="onNoClick()">
       <mat-icon mat-list-icon>close</mat-icon>
     </button>
   </mat-toolbar>
 </h4>
-<div mat-dialog-content></div>
+<div mat-dialog-content>
+  <app-table [tableConfig]="tableConfig" [onClicker]="copyCode"> </app-table>
+</div>

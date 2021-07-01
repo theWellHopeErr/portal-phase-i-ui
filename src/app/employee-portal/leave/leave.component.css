@@ -3,9 +3,9 @@
 }
 
 mat-card {
-  min-height: 34em;
+  min-height: 36em;
   width: fit-content;
-  min-width: 69em;
+  min-width: 74rem;
   height: fit-content;
   margin: 1em 2em;
 }
@@ -38,4 +38,14 @@ a {
 
 .mat-raised-button {
   background-color: #ffb456;
+}
+
+.task-header {
+  background-color: transparent;
+  padding: 0 5px;
+  height: 20px;
+}
+
+.fx-spacer {
+  flex: 1 1 auto;
 }

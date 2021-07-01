@@ -51,7 +51,6 @@ export class LeaveComponent implements OnInit {
         this.tableConfig['dataSource'] = new MatTableDataSource(res.details);
         this.leaveQuota = res.quota;
         this.leaveTypes = res.types;
-        console.log(this.leaveQuota, this.leaveTypes);
         this.loading = false;
       },
       (err) => {
@@ -60,13 +59,6 @@ export class LeaveComponent implements OnInit {
         else this.error = 'Internal Server Error';
       }
     );
-  }
-
-  openLeaveRequestDialog(): void {
-    this.dialog.open(LeaveRequestDialog, {
-      width: '2500px',
-      data: this.leaveTypes,
-    });
   }
 
   openLeaveQuotaDialog(): void {
@@ -82,23 +74,9 @@ export class LeaveComponent implements OnInit {
 }
 
 @Component({
-  selector: 'leave-request-dialog',
-  templateUrl: 'leave-request-dialog.html',
-})
-export class LeaveRequestDialog {
-  constructor(
-    public dialogRef: MatDialogRef<LeaveRequestDialog>,
-    @Inject(MAT_DIALOG_DATA) public data
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-}
-
-@Component({
   selector: 'leave-quota-dialog',
   templateUrl: 'leave-quota-dialog.html',
+  styleUrls: ['./leave.component.css'],
 })
 export class LeaveQuotaDialog {
   constructor(

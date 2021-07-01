@@ -9,7 +9,8 @@
       <button
         mat-raised-button
         color="primary"
-        (click)="openLeaveRequestDialog()"
+        [routerLink]="['/employee/leave-request']"
+        routerLinkActive="router-link-active"
       >
         <mat-icon>add</mat-icon>
         New Leave Request

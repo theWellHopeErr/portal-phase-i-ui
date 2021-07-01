@@ -15,6 +15,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { EmployeePortalLandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
@@ -22,10 +24,17 @@ import { EmployeePortalRoutingModule } from './employee-portal-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LeaveComponent } from './leave/leave.component';
+import { LeaveComponent, LeaveQuotaDialog } from './leave/leave.component';
 import { PaySlipComponent } from './pay-slip/pay-slip.component';
 import { PaySlipDetailsComponent } from './pay-slip-details/pay-slip-details.component';
-import { NoticeComponent } from './notice/notice.component';
+import {
+  FinalSettlementDialog,
+  NoticeComponent,
+} from './notice/notice.component';
+import {
+  LeaveRequestComponent,
+  LeaveTypesDialog,
+} from './leave-request/leave-request.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +46,10 @@ import { NoticeComponent } from './notice/notice.component';
     PaySlipComponent,
     PaySlipDetailsComponent,
     NoticeComponent,
+    FinalSettlementDialog,
+    LeaveRequestComponent,
+    LeaveQuotaDialog,
+    LeaveTypesDialog,
   ],
   imports: [
     CommonModule,
@@ -56,6 +69,8 @@ import { NoticeComponent } from './notice/notice.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
 })
 export class EmployeePortalModule {}

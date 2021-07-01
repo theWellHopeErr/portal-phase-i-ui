@@ -1,0 +1,142 @@
+<button mat-button (click)="goBack()">
+  <mat-icon>arrow_back_ios</mat-icon>Back
+</button>
+
+<mat-card>
+  <mat-card-title>Create Leave Request</mat-card-title>
+  <mat-card-content>
+    <div class="loading-wrapper" *ngIf="loading && !error">
+      <img class="loading-gif" src="../../../assets/img/loading.gif" />
+    </div>
+
+    <div class="header" *ngIf="!loading">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openLeaveTypesDialog()"
+      >
+        <mat-icon>format_list_bulleted</mat-icon>
+        Leave Types
+      </button>
+
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openLeaveQuotaDialog()"
+      >
+        <mat-icon>event</mat-icon>
+        Remaining Leave Quota
+      </button>
+    </div>
+
+    <div *ngIf="error" class="error-msg">{{ error }}</div>
+
+    <div class="form-wrapper">
+      <form [formGroup]="leaveReq">
+        <mat-grid-list cols="2" rowHeight="4em">
+          <mat-grid-tile class="label">
+            <mat-label>Start Date & End Date</mat-label>
+          </mat-grid-tile>
+          <mat-grid-tile class="value">
+            <mat-form-field appearance="outline">
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input
+                  matStartDate
+                  placeholder="Start date"
+                  formControlName="start_date"
+                />
+                <input
+                  matEndDate
+                  required
+                  placeholder="End date"
+                  formControlName="end_date"
+                />
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker">
+              </mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="2" rowHeight="4em">
+          <mat-grid-tile class="label">
+            <mat-label>Leave Type</mat-label>
+          </mat-grid-tile>
+          <mat-grid-tile class="value">
+            <mat-form-field appearance="outline">
+              <input
+                matInput
+                required
+                type="text"
+                formControlName="type"
+                color="primary"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="2" rowHeight="6em">
+          <mat-grid-tile class="label">
+            <mat-label>Reason</mat-label>
+          </mat-grid-tile>
+          <mat-grid-tile class="value">
+            <mat-form-field appearance="outline">
+              <textarea
+                matInput
+                required
+                formControlName="reason"
+                color="primary"
+              >
+              </textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </div>
+
+    <div class="error-wrapper" *ngIf="createErr">
+      <span class="create-err">{{ createErr }}</span>
+    </div>
+
+    <div class="action-wrapper" *ngIf="!createMsg && !createLoading">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onSubmit()"
+        class="action-btn create"
+      >
+        Create Request
+      </button>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="action-btn back"
+        [routerLink]="['/employee/leave']"
+        routerLinkActive="router-link-active"
+      >
+        Cancel
+      </button>
+    </div>
+
+    <div class="loading-wrapper" *ngIf="createLoading">
+      <img class="loading-gif" src="../../../assets/img/loading.gif" />
+    </div>
+
+    <div class="result-wrapper" *ngIf="createMsg">
+      <span class="create-msg">{{ createMsg }}</span>
+      <div class="header" *ngIf="!loading">
+        <button
+          id="create-back-btn"
+          mat-raised-button
+          color="primary"
+          (click)="goBack()"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
