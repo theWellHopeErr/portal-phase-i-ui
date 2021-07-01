@@ -1,0 +1,172 @@
+<h4 mat-dialog-title>
+  <mat-toolbar role="toolbar" class="task-header">
+    <span>Full & Final Settlement</span>
+    <span class="fx-spacer"></span>
+    <button mat-icon-button (click)="onNoClick()">
+      <mat-icon mat-list-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+</h4>
+<div mat-dialog-content>
+  <div class="final-set-wrapper">
+    <div class="company-details">
+      <mat-grid-list cols="6" rowHeight="4em">
+        <mat-grid-tile>
+          <mat-label>Company Group:</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <span>{{data.CCDESC}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-label>Company:</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <span>{{data.COMPANY}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-label>Company Code:</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile id="comp-code">
+          <span>{{data.COMPCODE}}</span>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <mat-grid-list cols="8" rowHeight="4em">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Amount 1:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.AMOUNT_1}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Amount 2:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.AMOUNT_2}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Amount 3:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.AMOUNT_3}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="8" rowHeight="4em">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Approver:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.APPROVER}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Cost Center:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.COST_CENTER}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Department:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.DEPARTMENT}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="8" rowHeight="4em">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Jon:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.JOB}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Division:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.DIVISION}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Currency:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.CURRENCY}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="8" rowHeight="4em">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Additional Pay:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.ADDITIONAL_PAY}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Deduction Amount:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.DEDUCT_AMT}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>No. of Leaves:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.NUM_OF_LEAVES}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="7" rowHeight="4em">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Join Date:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.JOIN_DATE}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Leave Date:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.LEAVE_DATE}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="7" rowHeight="4em">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Net Pay:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.NET_PAY}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile>
+        <mat-label>Gross Pay:</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span>{{data.GROSS_PAY}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="4em">
+      <mat-grid-tile id="tenure-period-label" class="mr-1">
+        <mat-label>Tenure Period: </mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile id="tenure-period-value" class="ml-1">
+        <span>{{data.TENURE_PERIOD}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
