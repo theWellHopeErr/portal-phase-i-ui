@@ -90,13 +90,13 @@ a {
   width: fit-content;
 }
 
-::ng-deep .final-set-wrapper mat-grid-tile .mat-figure {
+/* ::ng-deep .final-set-wrapper mat-grid-tile .mat-figure {
   justify-content: flex-start !important;
 }
 
 ::ng-deep .company-details mat-grid-tile .mat-figure {
   justify-content: center !important;
-}
+} */
 
 ::ng-deep #comp-code .mat-figure {
   justify-content: flex-start !important;
@@ -108,4 +108,32 @@ a {
 
 ::ng-deep #tenure-period-value .mat-figure {
   justify-content: flex-start !important;
+}
+
+::ng-deep .label .mat-figure {
+  justify-content: flex-end !important;
+  align-items: normal !important;
+  margin-left: 1em !important;
+}
+
+::ng-deep .value .mat-figure {
+  justify-content: flex-start !important;
+  align-items: normal !important;
+  margin-left: 1em !important;
+}
+
+.divider {
+  margin: 2em;
+}
+
+.company-details .label mat-label {
+  align-self: center;
+}
+
+.company-details span {
+  align-self: center;
+}
+
+#ccdesc {
+  width: 17em !important;
 }
