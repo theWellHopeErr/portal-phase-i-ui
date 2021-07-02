@@ -14,7 +14,6 @@ export class PhaseOneComponent implements OnInit {
   ngOnInit(): void {}
 
   showPhase(phase: 1 | 2 | 3): void {
-    console.log(phase);
     switch (phase) {
       case 1:
         this.showPhaseOne = false;

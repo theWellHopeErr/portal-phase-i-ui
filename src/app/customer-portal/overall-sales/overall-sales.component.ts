@@ -45,7 +45,6 @@ export class OverallSalesComponent implements OnInit {
         this.tableConfig['dataSource'] = new MatTableDataSource(
           this.csvToJSON(data)
         );
-        console.log(this.tableConfig);
       });
   }
 

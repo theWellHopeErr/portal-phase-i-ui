@@ -47,7 +47,6 @@ export class PaymentsAgingComponent implements OnInit {
         });
         this.tableConfig['dataSource'] = new MatTableDataSource(res);
         this.loading = false;
-        console.log(res);
       },
       (_err) => {
         this.error = `No Payment Records found for this account`;

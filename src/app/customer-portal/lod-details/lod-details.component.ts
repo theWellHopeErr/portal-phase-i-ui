@@ -44,7 +44,6 @@ export class LodDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.sdService.getDeliveryDetails(this.sd).subscribe(
       (res: any) => {
-        console.log(res.items);
         this.tableConfig['dataSource'] = new MatTableDataSource(res.items);
         this.loading = false;
       },
