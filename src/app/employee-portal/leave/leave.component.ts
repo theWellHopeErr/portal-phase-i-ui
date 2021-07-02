@@ -84,6 +84,10 @@ export class LeaveQuotaDialog {
     @Inject(MAT_DIALOG_DATA) public data
   ) {}
 
+  parseInt(val: string): number {
+    return parseInt(val);
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }

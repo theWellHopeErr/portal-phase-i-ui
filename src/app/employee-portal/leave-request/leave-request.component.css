@@ -119,10 +119,11 @@ mat-label {
 }
 
 .create-err {
-  color: #fff;
+  color: #f00;
   font-size: 1.5em;
 }
 
 .create-msg {
+  color: #12a500;
   font-size: 1.5em;
 }

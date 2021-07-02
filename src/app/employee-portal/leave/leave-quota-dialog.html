@@ -1,10 +1,158 @@
 <h4 mat-dialog-title>
   <mat-toolbar role="toolbar" class="task-header">
-    <span>Full & Final Settlement</span>
+    <span>Leave Quota</span>
     <span class="fx-spacer"></span>
     <button mat-icon-button (click)="onNoClick()">
       <mat-icon mat-list-icon>close</mat-icon>
     </button>
   </mat-toolbar>
 </h4>
-<div mat-dialog-content></div>
+<div mat-dialog-content>
+  <div class="fields-wrapper">
+    <div class="divider">
+      <h6>Remaining Leaves</h6>
+      <mat-divider></mat-divider>
+    </div>
+
+    <mat-grid-list cols="6" rowHeight="4em">
+      <mat-grid-tile class="label">
+        <mat-label>Remaining Leave</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.REST | number}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Remaining Free Leaves</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.REST_FREE | number}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Time Unit</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.TIMEUNIT_TEXT | uppercase}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <div class="divider">
+      <h6>Quota Details</h6>
+      <mat-divider></mat-divider>
+    </div>
+
+    <mat-grid-list cols="6" rowHeight="4em">
+      <mat-grid-tile class="label">
+        <mat-label>Quota No.</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{parseInt(data.QUOTANUMBER)}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Quota Text</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.QUOTATEXT | uppercase}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Quota Type</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.QUOTATYPE | uppercase}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="6" rowHeight="4em">
+      <mat-grid-tile class="label">
+        <mat-label>Ordered Leaves</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.ORDERED | number}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Reduced</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.REDUCED | number}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Reduced Since</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.REDUCED_SINCE | number}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <div class="divider">
+      <h6>Unit Details</h6>
+      <mat-divider></mat-divider>
+    </div>
+
+    <mat-grid-list cols="6" rowHeight="4em">
+      <mat-grid-tile class="label">
+        <mat-label>ISO Unit</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.ISOCODE_UNIT | uppercase}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Logical System</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.LOGICALSYSTEM | uppercase}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Measure</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.MEASURE | uppercase}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <div class="divider">
+      <h6>Pay Details</h6>
+      <mat-divider></mat-divider>
+    </div>
+
+    <mat-grid-list cols="6" rowHeight="4em">
+      <mat-grid-tile class="label">
+        <mat-label>Deduct Amount</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.DEDUCT | number}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Deduct Begin Date</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.DEDUCTBEGIN | date}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>Deduct End Date</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.DEDUCTEND | date}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="6" rowHeight="4em">
+      <mat-grid-tile class="label">
+        <mat-label>Entitled Amount</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.ENTITLE | number}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>From Date</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.FROM_DATE | date}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile class="label">
+        <mat-label>To Date</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile class="value">
+        <span>{{data.TO_DATE | date}}</span>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

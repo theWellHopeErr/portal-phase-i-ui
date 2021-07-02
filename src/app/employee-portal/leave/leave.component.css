@@ -49,3 +49,32 @@ a {
 .fx-spacer {
   flex: 1 1 auto;
 }
+
+::ng-deep .label .mat-figure {
+  justify-content: flex-end !important;
+}
+
+::ng-deep .value .mat-figure {
+  justify-content: flex-start !important;
+  margin-left: 1em !important;
+}
+
+.fields-wrapper .value span {
+  background: #fafafa;
+  padding: 0.6em;
+  border-radius: 10px;
+  width: 120px;
+  align-self: center;
+}
+
+.fields-wrapper .label mat-label {
+  align-self: center;
+}
+
+mat-grid-list {
+  margin: 1rem 0;
+}
+
+.divider {
+  margin-left: 2em;
+}
