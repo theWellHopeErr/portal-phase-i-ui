@@ -60,7 +60,6 @@ export class CdMemoComponent implements OnInit {
     this.fiService.getDebitMemo().subscribe(
       (res: any) => {
         if (res['length'] === undefined) res = [res];
-        console.log(res);
         res.map((o) => (o.GJAHR = o.ZFBDT.split('-')[0]));
         this.debitTableConfig['dataSource'] = new MatTableDataSource(res);
         this.loading = false;

@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { LoginComponent } from './login/login.component';
 import { TableComponent } from './table/table.component';
@@ -35,8 +36,17 @@ import { TablePipe } from './table.pipe';
     MatSortModule,
     MatPaginatorModule,
     FlexLayoutModule,
+    MatDialogModule,
   ],
-  providers: [DecimalPipe, UpperCasePipe, DatePipe],
+  providers: [
+    DecimalPipe,
+    UpperCasePipe,
+    DatePipe,
+    {
+      provide: MatDialogRef,
+      useValue: {},
+    },
+  ],
   exports: [LoginComponent, TableComponent],
 })
 export class SharedModule {}

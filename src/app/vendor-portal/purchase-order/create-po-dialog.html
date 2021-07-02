@@ -1,0 +1,153 @@
+<h4 mat-dialog-title>
+  <mat-toolbar role="toolbar" class="task-header">
+    <span>Create Purchase Order</span>
+    <span class="fx-spacer"></span>
+    <button mat-icon-button (click)="onNoClick()">
+      <mat-icon mat-list-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+</h4>
+
+<div mat-dialog-content>
+  <div class="form-wrapper">
+    <form [formGroup]="purchaseOrder">
+      <mat-grid-list cols="2" rowHeight="4em">
+        <mat-grid-tile class="label">
+          <mat-label>Document Date</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              [matDatepicker]="doc_picker"
+              placeholder="Document Date"
+              formControlName="doc_date"
+            />
+            <mat-datepicker-toggle matSuffix [for]="doc_picker">
+            </mat-datepicker-toggle>
+            <mat-datepicker #doc_picker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="4em">
+        <mat-grid-tile class="label">
+          <mat-label>Delivery Date</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              [matDatepicker]="del_picker"
+              placeholder="Delivery Date"
+              formControlName="del_date"
+            />
+            <mat-datepicker-toggle matSuffix [for]="del_picker">
+            </mat-datepicker-toggle>
+            <mat-datepicker #del_picker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="4em">
+        <mat-grid-tile class="label">
+          <mat-label>Material</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              required
+              type="text"
+              color="primary"
+              placeholder="Material"
+              formControlName="material"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="4em">
+        <mat-grid-tile class="label">
+          <mat-label>Description</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              required
+              type="text"
+              color="primary"
+              placeholder="Description"
+              formControlName="short_txt"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="4em">
+        <mat-grid-tile class="label">
+          <mat-label>Quantity</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              required
+              type="text"
+              placeholder="Quantity"
+              color="primary"
+              formControlName="quantity"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </div>
+</div>
+
+<div class="error-wrapper" *ngIf="createErr">
+  <span class="create-err">{{ createErr }}</span>
+</div>
+
+<div
+  mat-dialog-actions
+  class="action-wrapper"
+  *ngIf="!createMsg && !createLoading"
+>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onSubmit()"
+    class="action-btn create"
+  >
+    Create Purchase Order
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="action-btn back"
+    (click)="onNoClick()"
+  >
+    Cancel
+  </button>
+</div>
+
+<div class="loading-wrapper" *ngIf="createLoading">
+  <img class="loading-gif" src="../../../assets/img/loading.gif" />
+</div>
+
+<div class="result-wrapper" *ngIf="createMsg">
+  <span class="create-msg">{{ createMsg }}</span>
+  <div class="header" *ngIf="!loading">
+    <button
+      id="create-back-btn"
+      mat-raised-button
+      color="primary"
+      (click)="onNoClick()"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

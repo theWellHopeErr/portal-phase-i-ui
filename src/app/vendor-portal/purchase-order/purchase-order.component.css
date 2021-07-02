@@ -30,3 +30,86 @@ a {
   text-decoration: none;
   background-color: #0000;
 }
+
+.mat-raised-button {
+  background-color: #007bff;
+}
+
+.task-header {
+  background-color: transparent;
+  padding: 0 5px;
+  height: 20px;
+}
+
+.fx-spacer {
+  flex: 1 1 auto;
+}
+
+.value {
+  margin-left: 1em;
+}
+
+::ng-deep .label .mat-figure {
+  justify-content: flex-end !important;
+  /* align-items: normal !important; */
+}
+
+::ng-deep .value .mat-figure {
+  justify-content: flex-start !important;
+  align-items: normal !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline {
+  width: 256px;
+  height: 55px;
+}
+
+mat-grid-list {
+  margin: 1em 0;
+}
+
+#create-back-btn {
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #b0ffb0;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.error-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffa3a3;
+  border-radius: 1em;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.create-err {
+  color: #f00;
+  font-size: 1.5em;
+}
+
+.create-msg {
+  color: #12a500;
+  font-size: 1.5em;
+}
+
+.action-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.action-btn {
+  margin: 0 2em;
+  width: 13em;
+  font-size: medium;
+  height: 3rem;
+}

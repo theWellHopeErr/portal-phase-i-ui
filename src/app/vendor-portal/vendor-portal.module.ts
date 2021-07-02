@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { VendorPortalLandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
@@ -27,7 +29,10 @@ import { FinancialSheetComponent } from './financial-sheet/financial-sheet.compo
 import { PaymentsAgingComponent } from './payments-aging/payments-aging.component';
 import { CdMemoComponent } from './cd-memo/cd-memo.component';
 import { ReceiptComponent } from './receipt/receipt.component';
-import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+import {
+  CreatePODialog,
+  PurchaseOrderComponent,
+} from './purchase-order/purchase-order.component';
 import { QuotationComponent } from './quotation/quotation.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { QuotationDetailsComponent } from './quotation-details/quotation-details.component';
@@ -52,6 +57,7 @@ import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
     PurchaseOrderDetailsComponent,
     ReceiptDetailsComponent,
     InvoicePdfComponent,
+    CreatePODialog,
   ],
   imports: [
     CommonModule,
@@ -72,6 +78,9 @@ import { InvoicePdfComponent } from './invoice-pdf/invoice-pdf.component';
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
 })
 export class VendorPortalModule {}

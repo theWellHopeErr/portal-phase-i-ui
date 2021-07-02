@@ -5,10 +5,18 @@
 <mat-card>
   <mat-card-title>Purchase Order List</mat-card-title>
   <mat-card-content>
+    <div class="header">
+      <button mat-raised-button color="primary" (click)="openCreatePODialog()">
+        <mat-icon>add</mat-icon>
+        New Purchase Order
+      </button>
+    </div>
+
     <div *ngIf="error" class="error-msg">{{ error }}</div>
     <div class="loading-wrapper" *ngIf="loading && !error">
       <img class="loading-gif" src="../../../assets/img/loading.gif" />
     </div>
+
     <app-table
       *ngIf="!loading && !error"
       [tableConfig]="tableConfig"
