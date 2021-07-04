@@ -49,3 +49,7 @@ mat-card-actions {
   justify-content: space-between !important;
   margin: 0 3em !important;
 }
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
