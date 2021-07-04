@@ -5,7 +5,7 @@
 mat-card {
   min-height: 36em;
   width: fit-content;
-  min-width: 74rem;
+  min-width: 73rem;
   height: fit-content;
   margin: 1em 2em;
 }
@@ -136,4 +136,8 @@ a {
 
 #ccdesc {
   width: 17em !important;
+}
+
+::ng-deep .mat-dialog-container {
+  padding-bottom: 3em;
 }

@@ -9,7 +9,7 @@
     >
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <mat-icon class="mr-1">groups</mat-icon>
+    <mat-icon>groups</mat-icon>
     <span class="ml-1">Employee Portal</span>
   </mat-toolbar>
 </div>
@@ -48,7 +48,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'leave' }"
         href="/employee/leave"
       >
-        <mat-icon class="mr-1">date_range</mat-icon>
+        <mat-icon>date_range</mat-icon>
         Leave Request
       </a>
       <a
@@ -56,7 +56,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'pay-slip' }"
         href="/employee/pay-slip"
       >
-        <mat-icon class="mr-1">request_quote</mat-icon>
+        <mat-icon>request_quote</mat-icon>
         Pay Slip
       </a>
       <a
@@ -64,15 +64,13 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'notice' }"
         href="/employee/notice"
       >
-        <mat-icon class="mr-1">receipt_long</mat-icon>
+        <mat-icon>receipt_long</mat-icon>
         Notice Period
       </a>
     </mat-nav-list>
 
     <mat-nav-list class="logout-nav-list">
-      <a mat-list-item (click)="logout()">
-        <mat-icon class="mr-1">logout</mat-icon>Logout</a
-      >
+      <a mat-list-item (click)="logout()"> <mat-icon>logout</mat-icon>Logout</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
