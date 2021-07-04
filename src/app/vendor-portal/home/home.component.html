@@ -9,7 +9,7 @@
     >
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <mat-icon class="mr-1">shopping_cart</mat-icon>
+    <mat-icon>shopping_cart</mat-icon>
     <span class="ml-1">Vendor Portal</span>
   </mat-toolbar>
 </div>
@@ -48,7 +48,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'quotation' }"
         href="/vendor/quotation"
       >
-        <mat-icon class="mr-1">receipt_long</mat-icon>
+        <mat-icon>receipt_long</mat-icon>
         Request for Quotation
       </a>
       <a
@@ -56,7 +56,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'purchase-order' }"
         href="/vendor/purchase-order"
       >
-        <mat-icon class="mr-1">list_alt</mat-icon>
+        <mat-icon>list_alt</mat-icon>
         Purchase Order
       </a>
       <a
@@ -64,7 +64,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'receipt' }"
         href="/vendor/receipt"
       >
-        <mat-icon class="mr-1">featured_play_list</mat-icon>
+        <mat-icon>featured_play_list</mat-icon>
         Goods Receipt
       </a>
     </mat-nav-list>
@@ -84,7 +84,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'invoice' }"
         href="/vendor/invoice"
       >
-        <mat-icon class="mr-1">receipt</mat-icon>
+        <mat-icon>receipt</mat-icon>
         Invoice Details
       </a>
       <a
@@ -92,7 +92,7 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'payments-aging' }"
         href="/vendor/payments-aging"
       >
-        <mat-icon class="mr-1">featured_play_list</mat-icon>
+        <mat-icon>featured_play_list</mat-icon>
         Payments & Aging
       </a>
       <a
@@ -100,14 +100,14 @@
         [ngClass]="{ 'active-nav-item': routerLink === 'cd-memo' }"
         href="/vendor/cd-memo"
       >
-        <mat-icon class="mr-1">recent_actors</mat-icon>
+        <mat-icon>recent_actors</mat-icon>
         Credit/Demo Memo
       </a>
     </mat-nav-list>
 
     <mat-nav-list class="logout-nav-list">
       <a mat-list-item (click)="logout()">
-        <mat-icon class="mr-1">logout</mat-icon>
+        <mat-icon>logout</mat-icon>
         Logout
       </a>
     </mat-nav-list>

@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 225px;
   background: #5682ff;
 }
 
@@ -70,5 +70,13 @@ nav-item {
 }
 
 .mat-sidenav-content {
-  margin-left: 200px;
+  margin-left: 225px;
+}
+
+mat-nav-list mat-icon {
+  margin-right: 1rem;
+}
+
+mat-nav-list a {
+  height: 60px;
 }

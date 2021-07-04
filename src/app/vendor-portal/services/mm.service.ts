@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { PO } from '../purchase-order/PO';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,10 @@ export class MmService {
 
   getPODetails(pd: string) {
     return this.http.get(`api/vendor/po-details?pd=${pd}`);
+  }
+
+  createPO(POData: PO) {
+    return this.http.post('api/vendor/po-create', POData);
   }
 
   getGRList() {
