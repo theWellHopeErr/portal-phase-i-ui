@@ -27,7 +27,8 @@ export class LeaveRequestComponent implements OnInit {
     private hcmService: HcmService,
     private authService: AuthService,
     public dialog: MatDialog,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private snackService: SnackService
   ) {
     this.titleService.setTitle('Create Leave Request | Employee Portal');
     this.leaveReq = this.formBuilder.group(this.form);
@@ -60,7 +61,6 @@ export class LeaveRequestComponent implements OnInit {
         res.details.map((o, i) => (o['sno'] = i + 1));
         this.leaveQuota = res.quota;
         this.leaveTypes = res.types;
-        console.log(this.leaveQuota, this.leaveTypes);
         this.loading = false;
       },
       (err) => {
@@ -73,12 +73,12 @@ export class LeaveRequestComponent implements OnInit {
 
   dateFormatter(x) {
     let date = x.getDate();
-    let month = x.getMonth();
+    let month = x.getMonth() + 1;
     let year = x.getFullYear();
     if (date < 10) date = `0${date}`;
     if (month < 10) month = `0${month}`;
     if (year < 10) year = `0${year}`;
-    return `${date}.${month}.${year}`;
+    return `${year}-${month}-${date}`;
   }
 
   onSubmit(): void {
@@ -87,12 +87,30 @@ export class LeaveRequestComponent implements OnInit {
       this.error = 'Fill all fields!';
     else {
       this.error = '';
+      this.createMsg = '';
+      this.createErr = '';
+      this.createLoading = true;
+
       this.form = this.leaveReq.value;
       this.form.eid = this.username;
       this.form.start_date = this.dateFormatter(this.leaveReq.value.start_date);
       this.form.end_date = this.dateFormatter(this.leaveReq.value.end_date);
-      console.log(this.form);
-      this.createMsg = 'Leave Request Created';
+
+      this.hcmService.createLeaveRequest(this.form).subscribe(
+        (res: any) => {
+          if (res.error) {
+            this.snackService.openSnackBar(res.error);
+            this.createErr = res.error;
+          } else {
+            this.createMsg = `Leave Request Created Successfully`;
+          }
+          this.createLoading = false;
+        },
+        (err) => {
+          console.error(err);
+          this.createLoading = false;
+        }
+      );
     }
   }
 
