@@ -12,6 +12,7 @@ import {
 import { PO } from './PO';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/shared/auth.service';
+import { SnackService } from 'src/app/shared/snack.service';
 
 @Component({
   selector: 'app-purchase-order',
@@ -86,7 +87,9 @@ export class CreatePODialog {
     public dialogRef: MatDialogRef<CreatePODialog>,
     @Inject(MAT_DIALOG_DATA) public data,
     private authService: AuthService,
-    private formBuilder: FormBuilder
+    private mmService: MmService,
+    private formBuilder: FormBuilder,
+    private snackService: SnackService
   ) {
     this.purchaseOrder = this.formBuilder.group(this.form);
   }
@@ -108,6 +111,7 @@ export class CreatePODialog {
     material: '',
     short_txt: '',
     quantity: '',
+    po_item: '',
   };
 
   ngOnInit(): void {
@@ -118,12 +122,12 @@ export class CreatePODialog {
 
   dateFormatter(x) {
     let date = x.getDate();
-    let month = x.getMonth();
+    let month = x.getMonth() + 1;
     let year = x.getFullYear();
     if (date < 10) date = `0${date}`;
     if (month < 10) month = `0${month}`;
     if (year < 10) year = `0${year}`;
-    return `${date}.${month}.${year}`;
+    return `${year}-${month}-${date}`;
   }
 
   onSubmit(): void {
@@ -132,7 +136,11 @@ export class CreatePODialog {
     if (!doc_date || !del_date || !material || !short_txt || !quantity)
       this.error = 'Fill all fields!';
     else {
+      this.createLoading = true;
       this.error = '';
+      this.createErr = '';
+      this.createMsg = '';
+
       this.form = this.purchaseOrder.value;
       this.form.vid = this.username;
       this.form.doc_date = this.dateFormatter(
@@ -141,8 +149,29 @@ export class CreatePODialog {
       this.form.del_date = this.dateFormatter(
         this.purchaseOrder.value.del_date
       );
-      console.log(this.form);
-      this.createMsg = 'Leave Request Created';
+
+      this.form.comp_code = 'SA01';
+      this.form.purch_org = 'ZAJ7';
+      this.form.purch_grp = 'ZA7';
+      this.form.plant = 'ZAJ7';
+      this.form.po_item = '00010';
+
+      this.mmService.createPO(this.form).subscribe(
+        (res: any) => {
+          if (res.error) {
+            this.snackService.openSnackBar(res.error);
+            this.createErr = res.error;
+          } else {
+            this.createMsg = `Purchase Order Created with PO: ${res.po}`;
+            this.snackService.openSnackBar(`Purchase Order Created`);
+          }
+          this.createLoading = false;
+        },
+        (err) => {
+          console.error(err);
+          this.createLoading = false;
+        }
+      );
     }
   }
 

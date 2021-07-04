@@ -9,4 +9,5 @@ export interface PO {
   material: string;
   short_txt: string;
   quantity: string;
+  po_item: string;
 }
