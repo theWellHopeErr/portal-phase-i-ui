@@ -9,7 +9,7 @@ mat-form-field {
 }
 
 .mat-raised-button {
-  margin: 0 2em;
+  margin: 0 2em !important;
   width: 10em;
   font-size: medium;
   height: 3rem;

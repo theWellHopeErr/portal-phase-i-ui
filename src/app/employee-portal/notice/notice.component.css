@@ -141,3 +141,17 @@ a {
 ::ng-deep .mat-dialog-container {
   padding-bottom: 3em;
 }
+
+.fnf-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffefbd;
+  border-radius: 50px;
+  padding: 1em;
+  font-size: 1.2rem;
+}
+
+.fnf-wrapper b {
+  font-weight: 600;
+}

@@ -10,57 +10,6 @@
 <div mat-dialog-content>
   <div class="final-set-wrapper">
     <div class="company-details">
-      <div class="divider">
-        <h6>Pay Details</h6>
-        <mat-divider></mat-divider>
-      </div>
-
-      <mat-grid-list cols="8" rowHeight="4em">
-        <mat-grid-tile></mat-grid-tile>
-        <mat-grid-tile class="label">
-          <mat-label>Additional Pay</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile class="value">
-          <span>{{data.ADDITIONAL_PAY}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile class="label">
-          <mat-label>Deduction Amount</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile class="value">
-          <span>{{data.DEDUCT_AMT}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile class="label">
-          <mat-label>No. of Leaves</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile class="value">
-          <span>{{data.NUM_OF_LEAVES}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile></mat-grid-tile>
-      </mat-grid-list>
-
-      <mat-grid-list cols="8" rowHeight="4em">
-        <mat-grid-tile></mat-grid-tile>
-        <mat-grid-tile class="label">
-          <mat-label>Amount 1</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile class="value">
-          <span>{{data.AMOUNT_1}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile class="label">
-          <mat-label>Amount 2</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile class="value">
-          <span>{{data.AMOUNT_2}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile class="label">
-          <mat-label>Amount 3</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile class="value">
-          <span>{{data.AMOUNT_3}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile></mat-grid-tile>
-      </mat-grid-list>
-
       <div class="company-details">
         <div class="divider">
           <h6>Company Details</h6>
@@ -151,14 +100,14 @@
           <mat-label>Join Date</mat-label>
         </mat-grid-tile>
         <mat-grid-tile class="value">
-          <span>{{data.JOIN_DATE}}</span>
+          <span>{{data.JOIN_DATE | date}}</span>
         </mat-grid-tile>
         <mat-grid-tile></mat-grid-tile>
         <mat-grid-tile class="label">
           <mat-label>Leave Date</mat-label>
         </mat-grid-tile>
         <mat-grid-tile class="value">
-          <span>{{data.LEAVE_DATE}}</span>
+          <span>{{data.LEAVE_DATE | date}}</span>
         </mat-grid-tile>
         <mat-grid-tile></mat-grid-tile>
       </mat-grid-list>
@@ -177,7 +126,53 @@
         <mat-divider></mat-divider>
       </div>
 
-      <mat-grid-list cols="7" rowHeight="4em">
+      <mat-grid-list cols="8" rowHeight="4em">
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile class="label">
+          <mat-label>Additional Pay</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <span>{{data.ADDITIONAL_PAY}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile class="label">
+          <mat-label>Deduction Amount</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <span>{{data.DEDUCT_AMT}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile class="label">
+          <mat-label>No. of Leaves</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <span>{{data.NUM_OF_LEAVES}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="8" rowHeight="4em">
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile class="label">
+          <mat-label>Amount 1</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <span>{{data.AMOUNT_1}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile class="label">
+          <mat-label>Amount 2</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <span>{{data.AMOUNT_2}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile class="label">
+          <mat-label>Amount 3</mat-label>
+        </mat-grid-tile>
+        <mat-grid-tile class="value">
+          <span>{{data.AMOUNT_3}}</span>
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+
+      <!-- <mat-grid-list cols="7" rowHeight="4em">
         <mat-grid-tile></mat-grid-tile>
         <mat-grid-tile class="label">
           <mat-label>Net Pay</mat-label>
@@ -193,7 +188,18 @@
           <span class="value">{{data.GROSS_PAY}}</span>
         </mat-grid-tile>
         <mat-grid-tile></mat-grid-tile>
-      </mat-grid-list>
+      </mat-grid-list> -->
+
+      <div class="fnf-wrapper">
+        <div class="my-1">
+          <label class="mr-1">Net Pay: </label>
+          <b>{{data.CURRENCY}} {{data.NET_PAY}}</b>
+        </div>
+        <div class="my-1">
+          <label class="mr-1">Gross Pay: </label>
+          <b>{{data.CURRENCY}} {{data.GROSS_PAY}}</b>
+        </div>
+      </div>
     </div>
   </div>
 </div>

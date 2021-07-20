@@ -27,6 +27,7 @@
     "filepond": "^4.27.2",
     "filepond-plugin-file-validate-type": "^1.2.6",
     "ngx-filepond": "^6.0.0",
+    "pdfmake": "^0.1.71",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "videogular2": "^7.0.2",
