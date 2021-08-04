@@ -15,8 +15,7 @@ export class PaymentsAgingComponent implements OnInit {
   constructor(
     private titleService: Title,
     private location: Location,
-    private fiService: FiService,
-    private route: ActivatedRoute
+    private fiService: FiService
   ) {
     this.titleService.setTitle('Payments & Aging | Customer Portal');
   }

@@ -1,6 +1,8 @@
 .home {
   display: flex;
   text-align: center;
+  background-image: url(https://img.freepik.com/free-photo/gray-abstract-wireframe-technology-background_53876-101941.jpg);
+  background-size: cover;
 }
 
 h1 {
@@ -20,6 +22,10 @@ h1 {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+}
+
+mat-divider {
+  box-shadow: 0px 0px 10px 0px #545454;
 }
 
 mat-panel-title {
@@ -79,32 +85,32 @@ mat-icon {
 
 .customer {
   color: #ff5656;
-  box-shadow: 0px 0px 4px 2px #ff5656;
+  box-shadow: 0px 0px 4px 2px #ff5656, 5px 5px 30px rgb(0 0 0 / 20%);
 }
 
 .customer:hover {
-  box-shadow: 0px 0px 4px 6px #ff5656;
   cursor: pointer;
+  box-shadow: 0px 0px 4px 6px #ff5656, 5px 5px 34px rgb(0 0 0 / 20%);
 }
 
 .vendor {
   color: #5682ff;
-  box-shadow: 0px 0px 4px 2px #5682ff;
+  box-shadow: 0px 0px 4px 2px #5682ff, 5px 5px 30px rgb(0 0 0 / 20%);
 }
 
 .vendor:hover {
-  box-shadow: 0px 0px 4px 6px #5682ff;
   cursor: pointer;
+  box-shadow: 0px 0px 4px 6px #5682ff, 5px 5px 34px rgb(0 0 0 / 20%);
 }
 
 .employee {
   color: #ffb456;
-  box-shadow: 0px 0px 4px 2px #ffb456;
+  box-shadow: 0px 0px 4px 2px #ffb456, 5px 5px 30px rgb(0 0 0 / 20%);
 }
 
 .employee:hover {
-  box-shadow: 0px 0px 4px 6px #ffb456;
   cursor: pointer;
+  box-shadow: 0px 0px 4px 6px #ffb456, 5px 5px 34px rgb(0 0 0 / 20%);
 }
 
 .about::-webkit-scrollbar {
@@ -119,4 +125,14 @@ mat-icon {
 .about::-webkit-scrollbar-thumb {
   border-radius: 5em;
   background: #8fa7eb;
+}
+
+.menu-card {
+  background: #ffffff0d;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #fff3;
+  border-left: 1px solid #fff3;
+  /* box-shadow: 5px 5px 30px rgb(0 0 0 / 20%); */
+  border-radius: 30px;
+  padding: 2em;
 }
