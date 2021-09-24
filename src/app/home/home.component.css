@@ -1,7 +1,7 @@
 .home {
   display: flex;
   text-align: center;
-  background-image: url(https://img.freepik.com/free-photo/gray-abstract-wireframe-technology-background_53876-101941.jpg);
+  /* background-image: url(https://img.freepik.com/free-photo/gray-abstract-wireframe-technology-background_53876-101941.jpg); */
   background-size: cover;
 }
 
@@ -24,9 +24,9 @@ h1 {
   justify-content: center;
 }
 
-mat-divider {
+/* mat-divider {
   box-shadow: 0px 0px 10px 0px #545454;
-}
+} */
 
 mat-panel-title {
   font-size: 1.3em;
@@ -85,32 +85,32 @@ mat-icon {
 
 .customer {
   color: #ff5656;
-  box-shadow: 0px 0px 4px 2px #ff5656, 5px 5px 30px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 2px 2px #ff5656, 5px 5px 15px #00000033;
 }
 
 .customer:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 4px 6px #ff5656, 5px 5px 34px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 4px 4px #ff5656, 5px 5px 17px #00000033;
 }
 
 .vendor {
   color: #5682ff;
-  box-shadow: 0px 0px 4px 2px #5682ff, 5px 5px 30px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 2px 2px #5682ff, 5px 5px 15px #00000033;
 }
 
 .vendor:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 4px 6px #5682ff, 5px 5px 34px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 4px 4px #5682ff, 5px 5px 17px #00000033;
 }
 
 .employee {
   color: #ffb456;
-  box-shadow: 0px 0px 4px 2px #ffb456, 5px 5px 30px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 2px 2px #ffb456, 5px 5px 15px #00000033;
 }
 
 .employee:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 4px 6px #ffb456, 5px 5px 34px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 4px 4px #ffb456, 5px 5px 17px #00000033;
 }
 
 .about::-webkit-scrollbar {

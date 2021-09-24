@@ -1,8 +1,8 @@
 mat-card {
   width: 30em;
   text-align: center;
-  background: #ffffff0d;
-  backdrop-filter: blur(10px);
+  /* background: #ffffff0d; */
+  /* backdrop-filter: blur(10px); */
   border-top: 1px solid #fff3;
   border-left: 1px solid #fff3;
   box-shadow: 5px 5px 30px rgb(0 0 0 / 20%) !important;
@@ -23,4 +23,8 @@ mat-form-field {
   width: 10em;
   font-size: medium;
   height: 3rem;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 1.3em;
 }

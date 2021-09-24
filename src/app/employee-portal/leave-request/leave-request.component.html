@@ -74,6 +74,15 @@
                 color="primary"
               />
             </mat-form-field>
+            <button
+              mat-fab
+              color="primary"
+              title="Leave Types"
+              *ngIf="!loading"
+              (click)="openLeaveTypesDialog()"
+            >
+              <mat-icon>search</mat-icon>
+            </button>
           </mat-grid-tile>
         </mat-grid-list>
 

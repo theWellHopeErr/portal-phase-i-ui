@@ -127,3 +127,15 @@ mat-label {
   color: #12a500;
   font-size: 1.5em;
 }
+
+.form-wrapper .mat-fab {
+  border-radius: 35%;
+  margin-left: 2em;
+  box-shadow: none;
+  background: #ffb456;
+  outline-width: 0;
+}
+
+.form-wrapper .mat-fab:active {
+  box-shadow: none;
+}

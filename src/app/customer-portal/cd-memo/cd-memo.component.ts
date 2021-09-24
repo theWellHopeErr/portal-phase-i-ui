@@ -22,7 +22,7 @@ export class CdMemoComponent implements OnInit {
   creditTableConfig = {
     columns: [
       { name: 'GJAHR', title: 'Fical Year', pipe: 'string' },
-      { name: 'BELNR', title: 'Document No.', pipe: 'number' },
+      { name: 'BELNR', title: 'Invoice No.', pipe: 'number' },
       { name: 'PSWBT', title: 'Amount', pipe: 'currency' },
       { name: 'PSWSL', title: 'Currency', pipe: 'string' },
     ],
@@ -31,7 +31,7 @@ export class CdMemoComponent implements OnInit {
   debitTableConfig = {
     columns: [
       { name: 'GJAHR', title: 'Fical Year', pipe: 'string' },
-      { name: 'BELNR', title: 'Document No.', pipe: 'number' },
+      { name: 'BELNR', title: 'Invoice No.', pipe: 'number' },
       { name: 'PSWBT', title: 'Amount', pipe: 'currency' },
       { name: 'PSWSL', title: 'Currency', pipe: 'string' },
     ],

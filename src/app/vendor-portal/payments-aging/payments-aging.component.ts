@@ -21,7 +21,7 @@ export class PaymentsAgingComponent implements OnInit {
 
   tableConfig = {
     columns: [
-      { name: 'DOC_NO', title: 'Document Number', pipe: 'number' },
+      { name: 'DOC_NO', title: 'Invoice Number', pipe: 'number' },
       { name: 'ENTRY_DATE', title: 'Document Date', pipe: 'date' },
       { name: 'AMOUNT', title: 'Total Amount', pipe: 'currency' },
       { name: 'FISC_YEAR', title: 'Fiscal Year', pipe: 'number' },
