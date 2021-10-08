@@ -23,12 +23,12 @@ export class ReceiptComponent implements OnInit {
   tableConfig = {
     columns: [
       { name: 'MBLNR', title: 'Material Document No.', pipe: 'number' },
-      { name: 'MJAHR', title: 'Material Year', pipe: 'number' },
-      { name: 'MATNR', title: 'Material No.', pipe: 'uppercase' },
-      { name: 'LGORT', title: 'Location', pipe: 'uppercase' },
-      { name: 'WAERS', title: 'Currency', pipe: 'uppercase' },
+      { name: 'MJAHR', title: 'Year', pipe: 'number' },
       { name: 'WERKS', title: 'Plant', pipe: 'uppercase' },
+      { name: 'LGORT', title: 'Location', pipe: 'uppercase' },
+      { name: 'MATNR', title: 'Material No.', pipe: 'uppercase' },
       { name: 'ZEILE', title: 'Rows', pipe: 'number' },
+      { name: 'WAERS', title: 'Currency', pipe: 'uppercase' },
     ],
   };
   loading = true;

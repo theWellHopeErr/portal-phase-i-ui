@@ -26,7 +26,6 @@ export class LodComponent implements OnInit {
       { name: 'AUDAT', title: 'Document Date', pipe: 'date' },
       { name: 'VBTYP', title: 'Document Category', pipe: 'string' },
       { name: 'NETWR', title: 'Net Value', pipe: 'currency' },
-      { name: 'BSTNK', title: 'PO Number', pipe: 'string' },
       { name: 'WAERK', title: 'Currency', pipe: 'string' },
       { name: 'VKORG', title: 'Sales Orgnization', pipe: 'string' },
       { name: 'KUNNR', title: 'Sold To Party', pipe: 'string' },

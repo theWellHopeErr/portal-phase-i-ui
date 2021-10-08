@@ -117,7 +117,8 @@
           <mat-form-field [appearance]="isEditEnabled ? 'outline' : 'legacy'">
             <input
               matInput
-              type="text"
+              class="input-number"
+              type="number"
               formControlName="pcode"
               color="primary"
               [readonly]="!isEditEnabled"

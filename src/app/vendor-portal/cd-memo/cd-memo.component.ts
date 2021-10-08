@@ -21,21 +21,21 @@ export class CdMemoComponent implements OnInit {
 
   creditTableConfig = {
     columns: [
-      { name: 'BUZEI', title: 'Line Items', pipe: 'string' },
-      { name: 'GJAHR', title: 'Fical Year', pipe: 'string' },
+      { name: 'ZFBDT', title: 'Baseline Date', pipe: 'date' },
       { name: 'PSWBT', title: 'Amount', pipe: 'string' },
       { name: 'PSWSL', title: 'Currency', pipe: 'string' },
-      { name: 'ZFBDT', title: 'Baseline Date', pipe: 'date' },
+      { name: 'GJAHR', title: 'Fical Year', pipe: 'string' },
+      { name: 'BUZEI', title: 'Line Items', pipe: 'string' },
     ],
     dataSource: new MatTableDataSource<Element[]>(),
   };
   debitTableConfig = {
     columns: [
-      { name: 'BUZEI', title: 'Line Items', pipe: 'string' },
-      { name: 'GJAHR', title: 'Fical Year', pipe: 'string' },
+      { name: 'ZFBDT', title: 'Baseline Date', pipe: 'date' },
       { name: 'PSWBT', title: 'Amount', pipe: 'string' },
       { name: 'PSWSL', title: 'Currency', pipe: 'string' },
-      { name: 'ZFBDT', title: 'Baseline Date', pipe: 'date' },
+      { name: 'GJAHR', title: 'Fical Year', pipe: 'string' },
+      { name: 'BUZEI', title: 'Line Items', pipe: 'string' },
     ],
     dataSource: new MatTableDataSource<Element[]>(),
   };

@@ -24,7 +24,6 @@ export class InquiryComponent implements OnInit {
     columns: [
       { name: 'VBELN', title: 'Sales Document', pipe: 'number' },
       { name: 'AUDAT', title: 'Document Date', pipe: 'date' },
-      { name: 'BSTNK', title: 'PO Number', pipe: 'number' },
       { name: 'VBTYP', title: 'Document Category', pipe: 'string' },
       { name: 'NETWR', title: 'Net Value', pipe: 'currency' },
       { name: 'WAERK', title: 'Currency', pipe: 'string' },

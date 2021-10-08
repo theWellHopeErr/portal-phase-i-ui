@@ -18,7 +18,7 @@ export class PurchaseOrderDetailsComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.titleService.setTitle(`Request for Quotation Details | Vendor Portal`);
-    this.route.params.subscribe((params) => (this.pd = params.pd));
+    this.route.params.subscribe((params) => (this.pd = parseInt(params.pd)));
   }
 
   tableConfig = {
@@ -35,10 +35,10 @@ export class PurchaseOrderDetailsComponent implements OnInit {
   };
   loading = true;
   error = '';
-  pd: string;
+  pd: number;
 
   ngOnInit(): void {
-    this.mmService.getPODetails(this.pd).subscribe(
+    this.mmService.getPODetails(this.pd.toString()).subscribe(
       (res: any) => {
         this.tableConfig['dataSource'] = new MatTableDataSource(res.items);
         this.loading = false;
